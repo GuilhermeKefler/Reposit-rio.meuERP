@@ -83,8 +83,6 @@ body { font-family:var(--font); background:var(--bg); color:var(--text); font-si
 /* CARD */
 .card { background:var(--surface); border-radius:var(--r); box-shadow:var(--shadow); padding:22px; margin-bottom:18px; border:1px solid var(--border); }
 .card-title { font-size:11px; font-weight:600; color:var(--muted); letter-spacing:.1em; text-transform:uppercase; margin-bottom:16px; display:flex; justify-content:space-between; align-items:center; gap:12px; }
-.grid2 { display:grid; grid-template-columns:1fr 1fr; gap:16px; }
-.grid3 { display:grid; grid-template-columns:1fr 1fr 1fr; gap:16px; }
 
 /* STAT CARDS */
 .stats-grid { display:grid; grid-template-columns:repeat(5,1fr); gap:14px; margin-bottom:18px; }
@@ -97,130 +95,22 @@ body { font-family:var(--font); background:var(--bg); color:var(--text); font-si
 .stat-card.c5::before { background:linear-gradient(90deg,#dc2626,#f87171); }
 .stat-label { font-size:11px; font-weight:600; color:var(--muted); letter-spacing:.08em; text-transform:uppercase; margin-bottom:8px; }
 .stat-value { font-size:24px; font-weight:700; font-family:var(--mono); line-height:1; }
-.stat-icon { position:absolute; top:16px; right:16px; font-size:20px; opacity:.1; }
 
-/* TABLE */
-.table-wrap { overflow-x:auto; }
-table { width:100%; border-collapse:collapse; }
-th { font-size:11px; font-weight:600; color:var(--muted); text-align:left; padding:9px 14px; border-bottom:2px solid var(--border); letter-spacing:.06em; text-transform:uppercase; white-space:nowrap; }
-th.sortable { cursor:pointer; user-select:none; }
-th.sortable:hover { color:var(--text); }
-th .sort-ind { font-size:9px; margin-left:4px; opacity:.6; }
-td { padding:11px 14px; border-bottom:1px solid var(--border); font-size:13px; }
-tr:last-child td { border-bottom:none; }
-tbody tr:hover td { background:#f8fafc; }
-.row-actions { display:flex; gap:6px; flex-wrap:wrap; }
-
-/* FORM */
-.form-row { display:grid; gap:12px; align-items:end; margin-bottom:20px; }
-.form-field label { display:block; font-size:11px; font-weight:600; color:var(--muted); letter-spacing:.06em; text-transform:uppercase; margin-bottom:5px; }
-.form-field input, .form-field select, .form-field textarea {
-  width:100%; padding:10px 13px; border:1.5px solid var(--border); border-radius:8px;
-  font:inherit; font-size:13px; background:#fff; outline:none; transition:border-color .2s, box-shadow .2s;
-}
-.form-field input:focus, .form-field select:focus, .form-field textarea:focus { border-color:var(--accent); box-shadow:0 0 0 3px rgba(37,99,235,.1); }
-.btn-add { padding:10px 20px; background:var(--accent); color:#fff; border:none; border-radius:8px; font:inherit; font-size:13px; font-weight:600; cursor:pointer; height:38px; white-space:nowrap; transition:background .2s; }
-.btn-add:hover { background:var(--accent-h); }
-.btn-add[disabled] { background:#94a3b8; cursor:not-allowed; }
-.btn-edit { padding:5px 12px; background:#fff; color:var(--accent); border:1.5px solid #bfdbfe; border-radius:6px; font:inherit; font-size:12px; font-weight:500; cursor:pointer; transition:all .15s; }
-.btn-edit:hover { background:#eff6ff; border-color:var(--accent); }
-.btn-del { padding:5px 12px; background:#fff; color:var(--danger); border:1.5px solid #fecaca; border-radius:6px; font:inherit; font-size:12px; font-weight:500; cursor:pointer; transition:all .15s; }
-.btn-del:hover { background:#fef2f2; border-color:var(--danger); }
-.btn-go { padding:5px 12px; background:#fff; color:var(--success); border:1.5px solid #bbf7d0; border-radius:6px; font:inherit; font-size:12px; font-weight:500; cursor:pointer; transition:all .15s; }
-.btn-go:hover { background:#f0fdf4; border-color:var(--success); }
-.btn-secondary { padding:10px 18px; background:#fff; color:var(--muted); border:1.5px solid var(--border); border-radius:8px; font:inherit; font-size:13px; font-weight:500; cursor:pointer; height:38px; transition:all .15s; }
-.btn-secondary:hover { color:var(--text); border-color:var(--text); }
-.btn-warn { padding:10px 18px; background:var(--warn); color:#fff; border:none; border-radius:8px; font:inherit; font-size:13px; font-weight:600; cursor:pointer; height:38px; transition:background .2s; }
-.btn-warn:hover { background:#b45309; }
-
-.search-box { padding:8px 12px; border:1.5px solid var(--border); border-radius:8px; font:inherit; font-size:13px; min-width:220px; outline:none; transition:border-color .2s, box-shadow .2s; }
-.search-box:focus { border-color:var(--accent); box-shadow:0 0 0 3px rgba(37,99,235,.1); }
-.filter-sel { padding:8px 12px; border:1.5px solid var(--border); border-radius:8px; font:inherit; font-size:13px; background:#fff; cursor:pointer; outline:none; }
-.filter-sel:focus { border-color:var(--accent); }
-
-/* PAGINATION */
-.pager { display:flex; justify-content:space-between; align-items:center; margin-top:14px; padding-top:14px; border-top:1px solid var(--border); font-size:12px; color:var(--muted); flex-wrap:wrap; gap:8px; }
-.pager-btns { display:flex; gap:4px; }
-.pager-btn { background:#fff; border:1.5px solid var(--border); border-radius:6px; padding:5px 10px; font:inherit; font-size:12px; cursor:pointer; min-width:30px; transition:all .15s; }
-.pager-btn:hover:not([disabled]) { border-color:var(--accent); color:var(--accent); }
-.pager-btn[disabled] { opacity:.4; cursor:not-allowed; }
-.pager-btn.active { background:var(--accent); color:#fff; border-color:var(--accent); }
-
-/* BADGE */
-.badge { display:inline-flex; align-items:center; padding:3px 10px; border-radius:20px; font-size:11px; font-weight:600; }
-.badge-ok { background:#dcfce7; color:#166534; }
-.badge-warn { background:#fef3c7; color:#92400e; }
-.badge-danger { background:#fee2e2; color:#991b1b; }
-.badge-blue { background:#dbeafe; color:#1e40af; }
-.badge-purple { background:#ede9fe; color:#5b21b6; }
-.badge-sky { background:#e0f2fe; color:#075985; }
-.badge-gray { background:#f1f5f9; color:#475569; }
-
-/* CRP / GANTT */
-.crp-bar-wrap { margin-bottom:14px; }
-.crp-bar-label { display:flex; justify-content:space-between; font-size:13px; margin-bottom:6px; font-weight:500; }
-.crp-bar-bg { height:8px; background:var(--border); border-radius:4px; overflow:hidden; }
-.crp-bar-fill { height:100%; border-radius:4px; transition:width .6s ease; }
-.gantt { font-family:var(--mono); font-size:11px; }
-.gantt-head { display:grid; gap:4px; align-items:center; padding:6px 0; border-bottom:2px solid var(--border); margin-bottom:8px; color:var(--muted); font-weight:600; text-transform:uppercase; letter-spacing:.06em; }
-.gantt-row { display:grid; gap:4px; align-items:center; padding:6px 0; border-bottom:1px solid var(--border); }
-.gantt-name { font-family:var(--font); font-weight:600; font-size:12px; padding-right:8px; color:var(--text); }
-.gantt-track { display:flex; height:22px; background:var(--surface2); border-radius:4px; position:relative; overflow:hidden; }
-.gantt-bar { position:absolute; height:100%; background:linear-gradient(90deg,#2563eb,#0891b2); border-radius:3px; display:flex; align-items:center; justify-content:center; color:#fff; font-size:10px; font-weight:600; padding:0 6px; overflow:hidden; white-space:nowrap; min-width:8px; box-shadow:inset 0 -2px 0 rgba(0,0,0,.1); }
-.gantt-bar.b2 { background:linear-gradient(90deg,#7c3aed,#a78bfa); }
-.gantt-bar.b3 { background:linear-gradient(90deg,#d97706,#fbbf24); }
-.gantt-bar.b4 { background:linear-gradient(90deg,#059669,#10b981); }
-
-.chart-wrap { position:relative; height:230px; }
-.info-box { background:#eff6ff; border:1.5px solid #bfdbfe; border-radius:8px; padding:12px 16px; margin-bottom:16px; font-size:13px; color:#1e40af; line-height:1.6; }
+/* UTILS */
 .empty { text-align:center; padding:44px; color:var(--muted); font-size:13px; }
 .empty-icon { font-size:32px; margin-bottom:10px; }
-.alert-danger { background:#fef2f2; border:1.5px solid #fecaca; border-radius:8px; padding:12px 16px; font-size:13px; color:var(--danger); margin-top:14px; font-weight:500; }
-.alert-ok { background:#f0fdf4; border:1.5px solid #bbf7d0; border-radius:8px; padding:12px 16px; font-size:13px; color:#166534; margin-top:14px; font-weight:500; }
 .pill { display:inline-flex; align-items:center; gap:6px; padding:5px 12px; border-radius:20px; font-size:12px; font-weight:500; }
 .pill-blue { background:#dbeafe; color:#1e40af; }
 
-/* MODAL */
-.modal-bg { position:fixed; inset:0; background:rgba(15,23,42,.5); z-index:100; display:flex; align-items:center; justify-content:center; padding:20px; animation:fadeIn .2s ease; }
-.modal-box { background:#fff; border-radius:14px; max-width:560px; width:100%; max-height:90vh; box-shadow:var(--shadow-lg); display:flex; flex-direction:column; overflow:hidden; animation:fadeUp .3s ease; }
-.modal-box.lg { max-width:780px; }
-.modal-head { padding:18px 22px; border-bottom:1px solid var(--border); display:flex; justify-content:space-between; align-items:center; }
-.modal-title { font-size:16px; font-weight:700; }
-.modal-close { background:none; border:none; font-size:22px; color:var(--muted); cursor:pointer; line-height:1; }
-.modal-body { padding:22px; overflow-y:auto; flex:1; }
-.modal-foot { padding:14px 22px; border-top:1px solid var(--border); display:flex; justify-content:flex-end; gap:10px; }
-.fld { margin-bottom:14px; }
-.fld label { display:block; font-size:11px; font-weight:600; color:var(--muted); letter-spacing:.06em; text-transform:uppercase; margin-bottom:5px; }
-.fld input, .fld select, .fld textarea { width:100%; padding:10px 13px; border:1.5px solid var(--border); border-radius:8px; font:inherit; font-size:13px; background:#fff; outline:none; transition:border-color .2s, box-shadow .2s; }
-.fld input:focus, .fld select:focus, .fld textarea:focus { border-color:var(--accent); box-shadow:0 0 0 3px rgba(37,99,235,.1); }
-
-/* TOAST */
-.toast-wrap { position:fixed; top:18px; right:18px; z-index:200; display:flex; flex-direction:column; gap:8px; max-width:340px; }
-.toast { background:#fff; border:1.5px solid var(--border); border-left:4px solid var(--accent); border-radius:8px; padding:12px 16px; box-shadow:var(--shadow-lg); font-size:13px; animation:slideIn .3s ease; }
-.toast.ok { border-left-color:var(--success); }
-.toast.warn { border-left-color:var(--warn); }
-.toast.err { border-left-color:var(--danger); }
-.toast-title { font-weight:700; font-size:13px; margin-bottom:2px; }
-.toast-msg { color:var(--muted); font-size:12px; line-height:1.5; }
-
+/* ANIMATIONS */
 @keyframes fadeIn { from{opacity:0} to{opacity:1} }
 @keyframes fadeUp { from{opacity:0;transform:translateY(18px)} to{opacity:1;transform:translateY(0)} }
-@keyframes slideIn { from{opacity:0;transform:translateX(20px)} to{opacity:1;transform:translateX(0)} }
 .page-anim { animation:fadeUp .3s ease; }
 
 @media (max-width:900px){
   .stats-grid { grid-template-columns:repeat(2,1fr); }
-  .grid2, .grid3 { grid-template-columns:1fr; }
   .sidebar { transform:translateX(-100%); transition:transform .2s; z-index:50; }
-  .sidebar.open { transform:translateX(0); }
   .topbar, .content { margin-left:0; }
-}
-
-@media print {
-  .sidebar, .topbar, .page-actions, .pager, .row-actions, .card-title>div:nth-child(2) { display:none !important; }
-  .content { margin-left:0; padding:0; }
-  .card { box-shadow:none; border:1px solid #ddd; page-break-inside:avoid; }
-  body { background:#fff; }
 }
 </style>
 </head>
@@ -274,7 +164,6 @@ tbody tr:hover td { background:#f8fafc; }
     <span class="topbar-title" id="topbar-title">Dashboard</span>
     <span class="topbar-sub" id="topbar-sub">Vixmilks · Sistema de Gestão</span>
     <div class="topbar-spacer"></div>
-    <button class="bell" id="bell" title="Notificações" onclick="openNotifications()">🔔<span class="bell-dot" id="bell-dot" style="display:none">0</span></button>
     <span class="topbar-date" id="topbar-date"></span>
     <span class="pill pill-blue" id="topbar-user-pill">👤 Admin</span>
   </div>
@@ -282,21 +171,10 @@ tbody tr:hover td { background:#f8fafc; }
   <div class="content" id="content"></div>
 </div>
 
-<div id="modal-host"></div>
-<div id="toast-host" class="toast-wrap"></div>
-
 <script>
 /* ── HELPERS ── */
 function n(v){ const x=Number(v); return isFinite(x)?x:0; }
-function fmt(v){ return n(v).toLocaleString('pt-BR'); }
-function money(v){ return 'R$ '+n(v).toLocaleString('pt-BR',{minimumFractionDigits:2,maximumFractionDigits:2}); }
-function escapeHtml(s){ return String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c])); }
 function uid(){ return 'id_'+Date.now().toString(36)+Math.random().toString(36).slice(2,7); }
-function todayISO(){ return new Date().toISOString().slice(0,10); }
-function addDaysISO(iso, d){ const dt=new Date(iso); dt.setDate(dt.getDate()+d); return dt.toISOString().slice(0,10); }
-function fmtDate(iso){ if(!iso) return '—'; try{ return new Date(iso+'T00:00').toLocaleDateString('pt-BR'); }catch(e){return iso;} }
-function daysBetween(a,b){ return Math.max(1, Math.round((new Date(b)-new Date(a))/86400000)+1); }
-
 async function sha256(s){
   const buf = new TextEncoder().encode(s);
   const hash = await crypto.subtle.digest('SHA-256', buf);
@@ -305,112 +183,24 @@ async function sha256(s){
 
 /* ── STORAGE ── */
 function getData(k){ try { return JSON.parse(localStorage.getItem('vmk_'+k))||[]; } catch(e){ return []; } }
-function saveData(k,d){ try { localStorage.setItem('vmk_'+k, JSON.stringify(d)); } catch(e){ toast('err','Erro','Armazenamento cheio.'); } }
+function saveData(k,d){ try { localStorage.setItem('vmk_'+k, JSON.stringify(d)); } catch(e){ console.error('Storage full'); } }
 function getById(k,id){ return getData(k).find(x=>x.id===id); }
-function updateById(k,id,patch){
-  const list = getData(k);
-  const i = list.findIndex(x=>x.id===id);
-  if(i<0) return false;
-  list[i] = {...list[i], ...patch};
-  saveData(k,list); return true;
-}
-function deleteById(k,id){
-  const list = getData(k).filter(x=>x.id!==id);
-  saveData(k,list);
-}
 
 /* ── SEED ── */
 async function seed(){
   if(localStorage.getItem('vmk_seeded')==='2') return;
   const adminHash = await sha256('1234');
-  const seedData = {
-    produtos:[
-      {id:uid(),nome:"Leite Integral 1L",estoque:500,custo:3.20,categoria:"Acabado"},
-      {id:uid(),nome:"Leite Desnatado 1L",estoque:400,custo:3.00,categoria:"Acabado"},
-      {id:uid(),nome:"Iogurte Natural 170g",estoque:300,custo:1.80,categoria:"Acabado"},
-      {id:uid(),nome:"Iogurte Morango 170g",estoque:280,custo:2.00,categoria:"Acabado"},
-      {id:uid(),nome:"Manteiga 200g",estoque:150,custo:6.50,categoria:"Acabado"},
-      {id:uid(),nome:"Requeijão Cremoso 250g",estoque:200,custo:5.20,categoria:"Acabado"},
-      {id:uid(),nome:"Queijo Mussarela kg",estoque:120,custo:18.00,categoria:"Acabado"},
-      {id:uid(),nome:"Queijo Prato kg",estoque:100,custo:20.00,categoria:"Acabado"},
-      {id:uid(),nome:"Queijo Minas Frescal kg",estoque:90,custo:16.00,categoria:"Acabado"},
-      {id:uid(),nome:"Creme de Leite 200g",estoque:220,custo:2.80,categoria:"Acabado"},
-      {id:uid(),nome:"Leite Condensado 395g",estoque:180,custo:4.50,categoria:"Acabado"},
-      {id:uid(),nome:"Leite Cru (L)",estoque:5000,custo:2.10,categoria:"Matéria-Prima"},
-      {id:uid(),nome:"Embalagem Tetrapak 1L",estoque:1200,custo:0.45,categoria:"Insumo"},
-      {id:uid(),nome:"Pote PP 170g",estoque:900,custo:0.18,categoria:"Insumo"},
-      {id:uid(),nome:"Coalho (g)",estoque:3000,custo:0.12,categoria:"Insumo"},
-      {id:uid(),nome:"Fermento Lácteo (g)",estoque:1500,custo:0.30,categoria:"Insumo"}
-    ]
-  };
-  saveData('produtos', seedData.produtos);
-  const byName = Object.fromEntries(seedData.produtos.map(p=>[p.nome,p.id]));
-
-  const bom = [
-    {pai:"Leite Integral 1L", comp:"Leite Cru (L)", qtd:1.05},
-    {pai:"Leite Integral 1L", comp:"Embalagem Tetrapak 1L", qtd:1},
-    {pai:"Leite Desnatado 1L", comp:"Leite Cru (L)", qtd:1.05},
-    {pai:"Leite Desnatado 1L", comp:"Embalagem Tetrapak 1L", qtd:1},
-    {pai:"Queijo Mussarela kg", comp:"Leite Integral 1L", qtd:10},
-    {pai:"Queijo Mussarela kg", comp:"Coalho (g)", qtd:2},
-    {pai:"Queijo Prato kg", comp:"Leite Integral 1L", qtd:9},
-    {pai:"Queijo Prato kg", comp:"Coalho (g)", qtd:2},
-    {pai:"Queijo Minas Frescal kg", comp:"Leite Integral 1L", qtd:8},
-    {pai:"Manteiga 200g", comp:"Leite Integral 1L", qtd:5},
-    {pai:"Requeijão Cremoso 250g", comp:"Leite Integral 1L", qtd:4},
-    {pai:"Iogurte Natural 170g", comp:"Leite Integral 1L", qtd:1},
-    {pai:"Iogurte Natural 170g", comp:"Pote PP 170g", qtd:1},
-    {pai:"Iogurte Natural 170g", comp:"Fermento Lácteo (g)", qtd:5},
-    {pai:"Iogurte Morango 170g", comp:"Leite Integral 1L", qtd:1},
-    {pai:"Iogurte Morango 170g", comp:"Pote PP 170g", qtd:1},
-    {pai:"Iogurte Morango 170g", comp:"Fermento Lácteo (g)", qtd:5}
-  ].map(b=>({id:uid(), paiId:byName[b.pai], compId:byName[b.comp], qtd:b.qtd}));
-  saveData('bom', bom);
-
-  saveData('estoque', [
-    {id:uid(), produtoId:byName["Leite Cru (L)"], inicial:5000, seg:1500},
-    {id:uid(), produtoId:byName["Embalagem Tetrapak 1L"], inicial:1200, seg:300},
-    {id:uid(), produtoId:byName["Pote PP 170g"], inicial:900, seg:200},
-    {id:uid(), produtoId:byName["Coalho (g)"], inicial:3000, seg:500},
-    {id:uid(), produtoId:byName["Fermento Lácteo (g)"], inicial:1500, seg:300}
-  ]);
-
-  const operadores = [
-    {id:uid(), nome:"João Silva", cargo:"Operador de Produção", custoHora:25},
-    {id:uid(), nome:"Maria Souza", cargo:"Controle de Qualidade", custoHora:30},
-    {id:uid(), nome:"Carlos Lima", cargo:"Supervisor", custoHora:45},
-    {id:uid(), nome:"Ana Costa", cargo:"Embalagem", custoHora:22}
-  ];
-  saveData('operadores', operadores);
-
-  const maquinas = [
-    {id:uid(), nome:"Pasteurizador", prodHora:500, custo:50, tempo:2},
-    {id:uid(), nome:"Tanque de Fermentação", prodHora:300, custo:40, tempo:3},
-    {id:uid(), nome:"Prensa de Queijo", prodHora:200, custo:60, tempo:4},
-    {id:uid(), nome:"Linha de Envase", prodHora:600, custo:30, tempo:1}
-  ];
-  saveData('maquinas', maquinas);
-
-  saveData('pmp', [
-    {id:uid(), produtoId:byName["Queijo Mussarela kg"], dataInicio:todayISO(), dataFim:addDaysISO(todayISO(),3), qtd:50, status:"Pendente", maquinaId:maquinas[2].id, operadorId:operadores[0].id},
-    {id:uid(), produtoId:byName["Queijo Prato kg"], dataInicio:todayISO(), dataFim:addDaysISO(todayISO(),4), qtd:40, status:"Pendente", maquinaId:maquinas[2].id, operadorId:operadores[0].id},
-    {id:uid(), produtoId:byName["Iogurte Natural 170g"], dataInicio:todayISO(), dataFim:addDaysISO(todayISO(),1), qtd:100, status:"Pendente", maquinaId:maquinas[1].id, operadorId:operadores[3].id},
-    {id:uid(), produtoId:byName["Manteiga 200g"], dataInicio:addDaysISO(todayISO(),2), dataFim:addDaysISO(todayISO(),3), qtd:60, status:"Pendente", maquinaId:maquinas[0].id, operadorId:operadores[0].id}
-  ]);
-
-  saveData('ordens', []);
-  saveData('fornecedores', [
-    {id:uid(), nome:"Fazenda São José", contato:"(11) 91234-5678"},
-    {id:uid(), nome:"Embalagens MG", contato:"(31) 99888-7766"},
-    {id:uid(), nome:"Insumos Lácteos LTDA", contato:"(11) 95566-4433"}
-  ]);
-
+  
   saveData('usuarios', [
     {id:uid(), nome:"Admin", senhaHash:adminHash, perfil:"Administrador"},
     {id:uid(), nome:"supervisor", senhaHash:adminHash, perfil:"Supervisor"},
     {id:uid(), nome:"operador", senhaHash:adminHash, perfil:"Operador"}
   ]);
-  saveData('audit', []);
+  
+  saveData('produtos', [
+    {id:uid(), nome:"Leite Integral 1L", estoque:500, categoria:"Acabado"},
+    {id:uid(), nome:"Queijo Mussarela kg", estoque:120, categoria:"Acabado"}
+  ]);
 
   localStorage.setItem('vmk_seeded','2');
 }
@@ -418,73 +208,14 @@ async function seed(){
 /* ── PERMISSÕES ── */
 const PERFIS = {
   Administrador: { all:true },
-  Supervisor:    { read:true, write:true, delete:true, exec:true, config:false, users:false },
-  Operador:      { read:true, write:false, delete:false, exec:true, config:false, users:false }
+  Supervisor:    { read:true, write:true, users:false },
+  Operador:      { read:true, write:false, users:false }
 };
 let CURRENT = null;
 function can(action){
   if(!CURRENT) return false;
   const p = PERFIS[CURRENT.perfil] || {};
-  if(p.all) return true;
-  return !!p[action];
-}
-
-/* ── AUDITORIA ── */
-function audit(acao, detalhes){
-  const log = getData('audit');
-  log.unshift({id:uid(), data:new Date().toISOString(), usuario:CURRENT?CURRENT.nome:'sistema', acao, detalhes});
-  if(log.length>500) log.length=500;
-  saveData('audit', log);
-}
-
-/* ── TOASTS ── */
-function toast(type, title, msg){
-  const host = document.getElementById('toast-host');
-  const el = document.createElement('div');
-  el.className = 'toast '+type;
-  el.innerHTML = `<div class="toast-title">${escapeHtml(title)}</div><div class="toast-msg">${escapeHtml(msg)}</div>`;
-  host.appendChild(el);
-  setTimeout(()=>{ el.style.opacity='0'; el.style.transform='translateX(20px)'; el.style.transition='.3s'; }, 3500);
-  setTimeout(()=>el.remove(), 3900);
-}
-
-/* ── MODAL ── */
-function openModal(title, bodyHtml, footerHtml, opts){
-  opts = opts || {};
-  const host = document.getElementById('modal-host');
-  host.innerHTML = `<div class="modal-bg" onclick="if(event.target===this)closeModal()">
-    <div class="modal-box ${opts.lg?'lg':''}">
-      <div class="modal-head"><div class="modal-title">${escapeHtml(title)}</div><button class="modal-close" onclick="closeModal()">×</button></div>
-      <div class="modal-body">${bodyHtml}</div>
-      ${footerHtml?`<div class="modal-foot">${footerHtml}</div>`:''}
-    </div></div>`;
-}
-function closeModal(){ document.getElementById('modal-host').innerHTML=''; }
-
-/* ── NOTIFICAÇÕES ── */
-function getAlerts(){
-  const prods = getData('produtos');
-  const est = getData('estoque');
-  const alerts = [];
-  prods.filter(p=>n(p.estoque)<50).forEach(p=>alerts.push({tipo:'warn',msg:`Estoque baixo: ${p.nome} (${p.estoque} un)`}));
-  est.forEach(e=>{
-    const p = getById('produtos', e.produtoId);
-    if(p && n(p.estoque) < n(e.seg)) alerts.push({tipo:'err',msg:`Abaixo do segurança: ${p.nome}`});
-  });
-  return alerts;
-}
-function refreshBell(){
-  const alerts = getAlerts();
-  const dot = document.getElementById('bell-dot');
-  if(alerts.length){ dot.style.display='flex'; dot.textContent=alerts.length; }
-  else { dot.style.display='none'; }
-}
-function openNotifications(){
-  const alerts = getAlerts();
-  const body = alerts.length
-    ? alerts.map(a=>`<div class="alert-${a.tipo==='err'?'danger':a.tipo==='warn'?'danger':'ok'}" style="margin-top:8px">${escapeHtml(a.msg)}</div>`).join('')
-    : `<div class="empty"><div class="empty-icon">✅</div>Sem alertas no momento.</div>`;
-  openModal('Notificações ('+alerts.length+')', body, `<button class="btn-secondary" onclick="closeModal()">Fechar</button>`);
+  return p.all || !!p[action];
 }
 
 /* ── AUTH ── */
@@ -492,1438 +223,105 @@ async function login(){
   const u = document.getElementById('user').value.trim();
   const p = document.getElementById('pass').value;
   const err = document.getElementById('login-err');
-  const uf = document.getElementById('user'), pf = document.getElementById('pass');
-  err.textContent = '';
-  if(!u || !p){ err.textContent='⚠ Preencha usuário e senha.'; return; }
+  if(!u || !p) return;
+  
   const hash = await sha256(p);
   const usr = getData('usuarios').find(x=>x.nome.toLowerCase()===u.toLowerCase() && x.senhaHash===hash);
+  
   if(usr){
     CURRENT = usr;
     sessionStorage.setItem('vmk_session', usr.id);
-    uf.classList.remove('err'); pf.classList.remove('err');
     document.getElementById('login').style.display='none';
     document.getElementById('app').style.display='block';
     renderShell();
-    audit('LOGIN', `Usuário ${usr.nome}`);
     load('dashboard');
-    refreshBell();
-    const alerts = getAlerts();
-    if(alerts.length) toast('warn','Atenção',`${alerts.length} alerta(s) de estoque ativo(s).`);
   } else {
     err.textContent='⚠ Usuário ou senha inválidos.';
-    uf.classList.add('err'); pf.classList.add('err');
-    pf.value='';
   }
 }
+
 function logout(){
-  if(CURRENT) audit('LOGOUT', `Usuário ${CURRENT.nome}`);
   CURRENT = null;
   sessionStorage.removeItem('vmk_session');
   document.getElementById('app').style.display='none';
   document.getElementById('login').style.display='flex';
-  document.getElementById('user').value=''; document.getElementById('pass').value='';
-  document.getElementById('login-err').textContent='';
-  document.getElementById('user').classList.remove('err'); document.getElementById('pass').classList.remove('err');
+  document.getElementById('user').value = '';
+  document.getElementById('pass').value = '';
 }
 
-function renderShell(){
-  document.getElementById('uavatar').textContent = CURRENT.nome[0].toUpperCase();
+/* ── NAVIGATION ── */
+function renderShell() {
   document.getElementById('uname').textContent = CURRENT.nome;
   document.getElementById('urole').textContent = CURRENT.perfil;
-  document.getElementById('topbar-user-pill').textContent = '👤 '+CURRENT.nome+' · '+CURRENT.perfil;
-  document.getElementById('topbar-date').textContent = new Date().toLocaleDateString('pt-BR',{weekday:'short',day:'2-digit',month:'short',year:'numeric'});
-  const showUsers = can('users') || CURRENT.perfil==='Administrador';
-  document.getElementById('sidebar-nav').innerHTML = `
+  document.getElementById('uavatar').textContent = CURRENT.nome.charAt(0).toUpperCase();
+  document.getElementById('topbar-user-pill').textContent = `👤 ${CURRENT.nome}`;
+
+  const nav = document.getElementById('sidebar-nav');
+  nav.innerHTML = `
     <div class="nav-section">
-      <div class="nav-sec-label">Planejamento</div>
-      <button class="nav-btn" id="nav-dashboard" onclick="load('dashboard')"><span class="nav-icon">▦</span> Dashboard</button>
-      <button class="nav-btn" id="nav-pmp" onclick="load('pmp')"><span class="nav-icon">📅</span> PMP</button>
-      <button class="nav-btn" id="nav-mrp" onclick="load('mrp')"><span class="nav-icon">⚙</span> MRP</button>
-      <button class="nav-btn" id="nav-crp" onclick="load('crp')"><span class="nav-icon">📊</span> CRP</button>
-      <button class="nav-btn" id="nav-ordens" onclick="load('ordens')"><span class="nav-icon">📑</span> Ordens de Compra</button>
+      <div class="nav-sec-label">Geral</div>
+      <button class="nav-btn active" onclick="load('dashboard', this)">📊 Dashboard</button>
     </div>
     <div class="nav-section">
-      <div class="nav-sec-label">Cadastros</div>
-      <button class="nav-btn" id="nav-produtos" onclick="load('produtos')"><span class="nav-icon">🥛</span> Produtos</button>
-      <button class="nav-btn" id="nav-bom" onclick="load('bom')"><span class="nav-icon">🔩</span> BOM</button>
-      <button class="nav-btn" id="nav-estoque" onclick="load('estoque')"><span class="nav-icon">📦</span> Estoque</button>
-      <button class="nav-btn" id="nav-operadores" onclick="load('operadores')"><span class="nav-icon">👷</span> Operadores</button>
-      <button class="nav-btn" id="nav-maquinas" onclick="load('maquinas')"><span class="nav-icon">🏭</span> Máquinas</button>
-      <button class="nav-btn" id="nav-fornecedores" onclick="load('fornecedores')"><span class="nav-icon">🏢</span> Fornecedores</button>
+      <div class="nav-sec-label">Produção</div>
+      <button class="nav-btn" onclick="load('produtos', this)">📦 Produtos</button>
+      <button class="nav-btn" onclick="load('estoque', this)">🏢 Estoque</button>
     </div>
+    ${can('users') ? `
     <div class="nav-section">
-      <div class="nav-sec-label">Sistema</div>
-      <button class="nav-btn" id="nav-auditoria" onclick="load('auditoria')"><span class="nav-icon">📜</span> Auditoria</button>
-      ${showUsers?`<button class="nav-btn" id="nav-usuarios" onclick="load('usuarios')"><span class="nav-icon">👥</span> Usuários</button>`:''}
-      <button class="nav-btn" id="nav-config" onclick="load('config')"><span class="nav-icon">⚙</span> Configurações</button>
-    </div>`;
+      <div class="nav-sec-label">Administração</div>
+      <button class="nav-btn" onclick="load('usuarios', this)">👥 Usuários</button>
+    </div>` : ''}
+  `;
 }
 
-/* ── ROUTER ── */
-const pageTitles = {
-  dashboard:'Dashboard', pmp:'PMP', mrp:'MRP', crp:'CRP',
-  produtos:'Produtos', bom:'BOM', estoque:'Estoque',
-  operadores:'Operadores', maquinas:'Máquinas',
-  ordens:'Ordens de Compra', fornecedores:'Fornecedores',
-  config:'Configurações', auditoria:'Auditoria', usuarios:'Usuários'
-};
-const routes = {};
-const pageState = {};
-function ps(p){ if(!pageState[p]) pageState[p]={search:'', sort:null, dir:'asc', filter:'', page:1, pageSize:10}; return pageState[p]; }
-function load(p){
-  document.querySelectorAll('.nav-btn').forEach(b=>b.classList.remove('active'));
-  const btn = document.getElementById('nav-'+p);
-  if(btn) btn.classList.add('active');
-  document.getElementById('topbar-title').textContent = pageTitles[p]||p;
-  if(typeof routes[p] === 'function') routes[p]();
-  refreshBell();
-}
-
-/* ── BUSCA / ORDENAÇÃO / PAGINAÇÃO ── */
-function applyFilter(list, page, fields){
-  const s = ps(page).search.trim().toLowerCase();
-  if(!s) return list;
-  return list.filter(it=>fields.some(f=>String(it[f]??'').toLowerCase().includes(s)));
-}
-function applySort(list, page, getters){
-  const st = ps(page);
-  if(!st.sort || !getters[st.sort]) return list;
-  const g = getters[st.sort];
-  const arr = [...list];
-  arr.sort((a,b)=>{
-    const va=g(a), vb=g(b);
-    if(typeof va==='number' && typeof vb==='number') return st.dir==='asc'?va-vb:vb-va;
-    return st.dir==='asc' ? String(va).localeCompare(String(vb),'pt-BR') : String(vb).localeCompare(String(va),'pt-BR');
-  });
-  return arr;
-}
-function applyPage(list, page){
-  const st = ps(page);
-  const start = (st.page-1)*st.pageSize;
-  return list.slice(start, start+st.pageSize);
-}
-function setSort(page, key){
-  const st = ps(page);
-  if(st.sort===key){ st.dir = st.dir==='asc'?'desc':'asc'; }
-  else { st.sort=key; st.dir='asc'; }
-  load(page);
-}
-function setSearch(page, val){ ps(page).search=val; ps(page).page=1; load(page); }
-function setFilter(page, val){ ps(page).filter=val; ps(page).page=1; load(page); }
-function setPg(page, v){ ps(page).page=v; load(page); }
-function thSort(page, label, key){
-  const st = ps(page);
-  const ind = st.sort===key ? (st.dir==='asc'?'▲':'▼') : '⇅';
-  return `<th class="sortable" onclick="setSort('${page}','${key}')">${label}<span class="sort-ind">${ind}</span></th>`;
-}
-function pagerHtml(page, total){
-  const st = ps(page);
-  const pages = Math.max(1, Math.ceil(total/st.pageSize));
-  if(st.page>pages) st.page=pages;
-  const start = total===0?0:(st.page-1)*st.pageSize+1;
-  const end = Math.min(total, st.page*st.pageSize);
-  let buttons = '';
-  for(let i=1;i<=pages;i++){
-    if(pages>7 && Math.abs(i-st.page)>2 && i!==1 && i!==pages){
-      if(i===2 || i===pages-1) buttons += `<span style="padding:0 4px">…</span>`;
-      continue;
-    }
-    buttons += `<button class="pager-btn ${i===st.page?'active':''}" onclick="setPg('${page}',${i})">${i}</button>`;
+function load(page, btn) {
+  if(btn) {
+    document.querySelectorAll('.nav-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
   }
-  return `<div class="pager">
-    <div>Mostrando ${start}–${end} de ${total} · <select class="filter-sel" style="padding:3px 8px" onchange="ps('${page}').pageSize=Number(this.value);ps('${page}').page=1;load('${page}')">${[5,10,25,50].map(s=>`<option ${st.pageSize===s?'selected':''}>${s}</option>`).join('')}</select> por página</div>
-    <div class="pager-btns">
-      <button class="pager-btn" ${st.page<=1?'disabled':''} onclick="setPg('${page}',${st.page-1})">‹</button>
-      ${buttons}
-      <button class="pager-btn" ${st.page>=pages?'disabled':''} onclick="setPg('${page}',${st.page+1})">›</button>
-    </div>
-  </div>`;
-}
-
-/* ── CSV ── */
-function parseCSV(txt){
-  const lines = txt.replace(/\r/g,'').split('\n').filter(l=>l.trim());
-  if(!lines.length) return [];
-  const head = lines[0].split(',').map(h=>h.trim());
-  return lines.slice(1).map(l=>{
-    const cells = []; let cur=''; let q=false;
-    for(let i=0;i<l.length;i++){
-      const c=l[i];
-      if(c==='"'){ q=!q; }
-      else if(c===',' && !q){ cells.push(cur); cur=''; }
-      else cur+=c;
-    }
-    cells.push(cur);
-    const obj={};
-    head.forEach((h,i)=>obj[h]=cells[i]?.trim()??'');
-    return obj;
-  });
-}
-function toCSV(arr, cols){
-  const head = cols.join(',');
-  const body = arr.map(o=>cols.map(c=>{
-    const v = String(o[c]??'').replace(/"/g,'""');
-    return /[,"\n]/.test(v) ? `"${v}"` : v;
-  }).join(',')).join('\n');
-  return head+'\n'+body;
-}
-function downloadFile(name, content, type){
-  const blob = new Blob([content], {type:type||'text/plain'});
-  const a = document.createElement('a');
-  a.href = URL.createObjectURL(blob);
-  a.download = name;
-  document.body.appendChild(a); a.click(); document.body.removeChild(a);
-  setTimeout(()=>URL.revokeObjectURL(a.href), 1000);
-}
-
-/* ── CÁLCULO DE CUSTO E MRP RECURSIVO ── */
-function calcCustoCalculado(produtoId, visited){
-  visited = visited || new Set();
-  if(visited.has(produtoId)) return 0;
-  visited.add(produtoId);
-  const bom = getData('bom').filter(b=>b.paiId===produtoId);
-  if(!bom.length){
-    const p = getById('produtos', produtoId);
-    return p ? n(p.custo) : 0;
-  }
-  let total = 0;
-  for(const b of bom){
-    const sub = calcCustoCalculado(b.compId, new Set(visited));
-    total += sub * n(b.qtd);
-  }
-  return total;
-}
-function explodeNeeds(produtoId, qtd, acc){
-  const bom = getData('bom').filter(b=>b.paiId===produtoId);
-  if(!bom.length){
-    acc[produtoId] = (acc[produtoId]||0) + qtd;
-    return;
-  }
-  for(const b of bom) explodeNeeds(b.compId, n(b.qtd)*qtd, acc);
-}
-
-/* ── DASHBOARD ── */
-function dashboard(){
-  const prods = getData('produtos'), pmpD = getData('pmp'), maqD = getData('maquinas'), opD = getData('operadores');
-  const valorTotal = prods.reduce((a,p)=>a+n(p.estoque)*n(p.custo),0);
-  const carga = pmpD.filter(p=>p.status==='Pendente'||p.status==='Em Produção').reduce((a,p)=>a+n(p.qtd),0);
-  const criticos = prods.filter(p=>n(p.estoque)<50).length;
-  const concluidos = pmpD.filter(p=>p.status==='Concluído').length;
-  document.getElementById('content').innerHTML=`
-  <div class="page-anim">
-    <div class="page-header">
-      <div>
-        <div class="page-title">Visão Geral</div>
-        <div class="page-sub">${new Date().toLocaleDateString('pt-BR',{weekday:'long',day:'2-digit',month:'long',year:'numeric'})}</div>
-      </div>
-      <div class="page-actions">
-        <button class="btn-secondary" onclick="window.print()">🖨 Imprimir / PDF</button>
-      </div>
-    </div>
-    <div class="stats-grid">
-      <div class="stat-card c1"><div class="stat-label">Produtos</div><div class="stat-value">${prods.length}</div><div class="stat-icon">🥛</div></div>
-      <div class="stat-card c2"><div class="stat-label">Valor em Estoque</div><div class="stat-value" style="font-size:17px">R$${valorTotal.toLocaleString('pt-BR',{maximumFractionDigits:0})}</div><div class="stat-icon">💰</div></div>
-      <div class="stat-card c3"><div class="stat-label">Carga PMP Ativa</div><div class="stat-value">${fmt(carga)}</div><div class="stat-icon">📅</div></div>
-      <div class="stat-card c4"><div class="stat-label">Concluídos</div><div class="stat-value">${concluidos}</div><div class="stat-icon">✅</div></div>
-      <div class="stat-card c5"><div class="stat-label">Estoque Crítico</div><div class="stat-value">${criticos}</div><div class="stat-icon">⚠️</div></div>
-    </div>
-    <div class="grid2">
-      <div class="card"><div class="card-title">Distribuição de Estoque</div>
-        ${prods.length?`<div class="chart-wrap"><canvas id="chart-pie"></canvas></div>`:`<div class="empty"><div class="empty-icon">🥛</div>Nenhum produto.</div>`}
-      </div>
-      <div class="card"><div class="card-title">Estoque por Produto</div>
-        ${prods.length?`<div class="chart-wrap"><canvas id="chart-bar"></canvas></div>`:`<div class="empty"><div class="empty-icon">📦</div>Sem dados.</div>`}
-      </div>
-    </div>
-    <div class="grid3">
-      <div class="card"><div class="card-title">Resumo</div>
-        ${[['👷 Operadores',opD.length,'badge-blue'],['🏭 Máquinas',maqD.length,'badge-purple'],['🔩 BOM',getData('bom').length,'badge-sky'],['📑 Ordens Abertas',getData('ordens').filter(o=>o.status==='Pendente').length,'badge-warn']].map(([l,v,b])=>`
-          <div style="display:flex;justify-content:space-between;align-items:center;padding:10px 0;border-bottom:1px solid var(--border)">
-            <span>${l}</span><span class="badge ${b}">${v}</span>
-          </div>`).join('')}
-      </div>
-      <div class="card"><div class="card-title">Alertas Críticos</div>
-        ${prods.filter(p=>n(p.estoque)<50).slice(0,5).map(p=>`
-          <div style="display:flex;justify-content:space-between;align-items:center;padding:8px 0;border-bottom:1px solid var(--border);font-size:13px">
-            <span>${escapeHtml(p.nome)}</span><span class="badge badge-danger">${p.estoque} un</span>
-          </div>`).join('') || `<div class="empty" style="padding:22px"><div class="empty-icon">✅</div>Tudo normal.</div>`}
-      </div>
-      <div class="card"><div class="card-title">PMP — Próximos</div>
-        ${pmpD.filter(p=>p.status!=='Concluído'&&p.status!=='Cancelado').slice(0,4).map(p=>{
-          const prod=getById('produtos',p.produtoId);
-          return `<div style="padding:8px 0;border-bottom:1px solid var(--border)">
-            <div style="font-weight:600;font-size:13px">${escapeHtml(prod?prod.nome:'?')}</div>
-            <div style="font-size:11px;color:var(--muted);font-family:var(--mono)">${fmt(p.qtd)} un · ${fmtDate(p.dataInicio)} → ${fmtDate(p.dataFim)}</div>
-          </div>`;
-        }).join('') || `<div class="empty" style="padding:22px"><div class="empty-icon">📅</div>Nenhum pedido ativo.</div>`}
-      </div>
-    </div>
-  </div>`;
-  if(prods.length && typeof Chart !== 'undefined'){
-    const top = prods.slice(0,8);
-    const pal = ['#2563eb','#0891b2','#7c3aed','#d97706','#dc2626','#059669','#0f172a','#475569'];
-    setTimeout(()=>{
-      try {
-        const pieEl = document.getElementById('chart-pie');
-        if(pieEl) new Chart(pieEl,{
-          type:'pie',
-          data:{labels:top.map(p=>p.nome),datasets:[{data:top.map(p=>n(p.estoque)),backgroundColor:pal,borderWidth:2,borderColor:'#fff'}]},
-          options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{position:'right',labels:{font:{family:'Inter',size:11},boxWidth:12,padding:8}}}}
-        });
-        const all = prods.slice(0,10);
-        const barEl = document.getElementById('chart-bar');
-        if(barEl) new Chart(barEl,{
-          type:'bar',
-          data:{labels:all.map(p=>String(p.nome).split(' ')[0]),datasets:[{data:all.map(p=>n(p.estoque)),backgroundColor:all.map(p=>n(p.estoque)<50?'#dc2626':n(p.estoque)<100?'#d97706':'#2563eb'),borderRadius:5,borderSkipped:false}]},
-          options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false}},scales:{x:{ticks:{font:{family:'JetBrains Mono',size:10}},grid:{display:false}},y:{ticks:{font:{family:'JetBrains Mono',size:10}},grid:{color:'#f1f5f9'}}}}
-        });
-      } catch(e){ console.error(e); }
-    },80);
-  }
-}
-routes.dashboard = dashboard;
-
-/* ── PRODUTOS ── */
-function produtos(){
-  const all = getData('produtos');
-  const st = ps('produtos');
-  const filtered = applyFilter(all, 'produtos', ['nome','categoria']);
-  const filteredCat = st.filter ? filtered.filter(p=>p.categoria===st.filter) : filtered;
-  const sorted = applySort(filteredCat, 'produtos', {nome:p=>p.nome, estoque:p=>n(p.estoque), custo:p=>n(p.custo), valor:p=>n(p.estoque)*n(p.custo), categoria:p=>p.categoria||''});
-  const paged = applyPage(sorted, 'produtos');
-  const cats = [...new Set(all.map(p=>p.categoria||'—'))];
-
-  document.getElementById('content').innerHTML=`
-  <div class="page-anim">
-    <div class="page-header">
-      <div><div class="page-title">Produtos</div><div class="page-sub">Catálogo de laticínios e derivados</div></div>
-      <div class="page-actions">
-        ${can('write')?`<button class="btn-add" onclick="editProduto()">+ Novo Produto</button>`:''}
-        <button class="btn-secondary" onclick="exportProdutosCSV()">⬇ CSV</button>
-        ${can('write')?`<button class="btn-secondary" onclick="document.getElementById('csv-prod').click()">⬆ CSV</button>
-        <input type="file" id="csv-prod" accept=".csv,text/csv" style="display:none" onchange="importProdutosCSV(event)">`:''}
-      </div>
-    </div>
-    <div class="card">
-      <div class="card-title">
-        Catálogo · ${filteredCat.length} de ${all.length} produto(s)
-        <div style="display:flex;gap:8px">
-          <input class="search-box" placeholder="🔍 Buscar..." value="${escapeHtml(st.search)}" oninput="setSearch('produtos',this.value)">
-          <select class="filter-sel" onchange="setFilter('produtos',this.value)">
-            <option value="">Todas categorias</option>
-            ${cats.map(c=>`<option value="${escapeHtml(c)}" ${st.filter===c?'selected':''}>${escapeHtml(c)}</option>`).join('')}
-          </select>
+  document.getElementById('topbar-title').textContent = page.charAt(0).toUpperCase() + page.slice(1);
+  const content = document.getElementById('content');
+  
+  if(page === 'dashboard') {
+    const prods = getData('produtos');
+    content.innerHTML = `
+      <div class="page-header page-anim">
+        <div>
+          <div class="page-title">Dashboard</div>
+          <div class="page-sub">Indicadores em tempo real.</div>
         </div>
       </div>
-      ${!paged.length?`<div class="empty"><div class="empty-icon">🥛</div>Nenhum produto.</div>`:`
-      <div class="table-wrap"><table>
-        <thead><tr>
-          ${thSort('produtos','Produto','nome')}
-          ${thSort('produtos','Categoria','categoria')}
-          ${thSort('produtos','Estoque','estoque')}
-          ${thSort('produtos','Custo Unit.','custo')}
-          ${thSort('produtos','Valor Total','valor')}
-          <th>Status</th><th></th>
-        </tr></thead>
-        <tbody>${paged.map(p=>{
-          const est=n(p.estoque), custo=n(p.custo);
-          const s = est===0?['badge-danger','Zerado']:est<50?['badge-warn','Baixo']:['badge-ok','Normal'];
-          return `<tr>
-            <td><strong>${escapeHtml(p.nome)}</strong></td>
-            <td><span class="badge badge-gray">${escapeHtml(p.categoria||'—')}</span></td>
-            <td style="font-family:var(--mono)">${fmt(est)}</td>
-            <td style="font-family:var(--mono)">${money(custo)}</td>
-            <td style="font-family:var(--mono);color:var(--accent);font-weight:600">${money(est*custo)}</td>
-            <td><span class="badge ${s[0]}">${s[1]}</span></td>
-            <td><div class="row-actions">
-              ${can('write')?`<button class="btn-edit" onclick="editProduto('${p.id}')">Editar</button>`:''}
-              ${can('delete')?`<button class="btn-del" onclick="delProduto('${p.id}')">Remover</button>`:''}
-            </div></td>
-          </tr>`;
-        }).join('')}</tbody>
-      </table></div>
-      ${pagerHtml('produtos', filteredCat.length)}`}
-    </div>
-  </div>`;
-}
-routes.produtos = produtos;
-
-function editProduto(id){
-  const p = id ? getById('produtos', id) : {nome:'',estoque:0,custo:0,categoria:'Acabado'};
-  if(!p){ toast('err','Erro','Produto não encontrado'); return; }
-  const custoCalc = id ? calcCustoCalculado(id) : 0;
-  openModal(id?'Editar Produto':'Novo Produto',`
-    <div class="fld"><label>Nome</label><input id="f-nome" value="${escapeHtml(p.nome)}"></div>
-    <div class="grid2">
-      <div class="fld"><label>Categoria</label>
-        <select id="f-cat">
-          <option ${p.categoria==='Acabado'?'selected':''}>Acabado</option>
-          <option ${p.categoria==='Matéria-Prima'?'selected':''}>Matéria-Prima</option>
-          <option ${p.categoria==='Insumo'?'selected':''}>Insumo</option>
-          <option ${p.categoria==='Semi-Acabado'?'selected':''}>Semi-Acabado</option>
-        </select>
+      <div class="stats-grid page-anim">
+        <div class="stat-card c1"><div class="stat-label">Produtos</div><div class="stat-value">${prods.length}</div></div>
+        <div class="stat-card c2"><div class="stat-label">Ordens Ativas</div><div class="stat-value">0</div></div>
       </div>
-      <div class="fld"><label>Estoque (un)</label><input id="f-est" type="number" min="0" step="0.01" value="${n(p.estoque)}"></div>
-    </div>
-    <div class="grid2">
-      <div class="fld"><label>Custo Unitário (R$) — manual</label><input id="f-custo" type="number" min="0" step="0.01" value="${n(p.custo)}"></div>
-      <div class="fld"><label>Custo Calculado (BOM)</label><input value="${id&&custoCalc>0?money(custoCalc):'—'}" disabled></div>
-    </div>
-    ${id?`<div class="info-box" style="font-size:12px">Custo calculado considera matérias-primas via BOM. Se diferente do manual, indica margem ou desperdício.</div>`:''}
-  `,`
-    <button class="btn-secondary" onclick="closeModal()">Cancelar</button>
-    <button class="btn-add" onclick="saveProduto('${id||''}')">Salvar</button>
-  `);
-}
-function saveProduto(id){
-  const nome = document.getElementById('f-nome').value.trim();
-  if(!nome){ toast('err','Erro','Nome obrigatório.'); return; }
-  const data = {nome, categoria:document.getElementById('f-cat').value, estoque:Math.max(0,n(document.getElementById('f-est').value)), custo:Math.max(0,n(document.getElementById('f-custo').value))};
-  const list = getData('produtos');
-  const dup = list.find(p=>p.nome.toLowerCase()===nome.toLowerCase() && p.id!==id);
-  if(dup){ toast('err','Erro','Já existe um produto com esse nome.'); return; }
-  if(id){
-    updateById('produtos', id, data);
-    audit('UPDATE_PRODUTO', `${nome}`);
+      <div class="card page-anim">
+        <div class="empty">📊 Bem-vindo ao sistema de gestão industrial.</div>
+      </div>`;
   } else {
-    list.push({id:uid(), ...data});
-    saveData('produtos', list);
-    audit('CREATE_PRODUTO', `${nome}`);
+    content.innerHTML = `
+      <div class="card page-anim">
+        <div class="empty"><div class="empty-icon">🚧</div>Módulo <b>${page}</b> em desenvolvimento.</div>
+      </div>`;
   }
-  closeModal(); toast('ok','Salvo','Produto registrado.'); produtos();
-}
-function delProduto(id){
-  const p = getById('produtos', id);
-  if(!p) return;
-  const usadoBOM = getData('bom').some(b=>b.paiId===id||b.compId===id);
-  const usadoPMP = getData('pmp').some(x=>x.produtoId===id);
-  const usadoEst = getData('estoque').some(x=>x.produtoId===id);
-  let msg = `Remover "${p.nome}"?`;
-  if(usadoBOM||usadoPMP||usadoEst) msg += `\n\nEle está sendo usado em: ${[usadoBOM?'BOM':null,usadoPMP?'PMP':null,usadoEst?'Estoque':null].filter(Boolean).join(', ')}.\nReferências também serão removidas.`;
-  if(!confirm(msg)) return;
-  deleteById('produtos', id);
-  if(usadoBOM) saveData('bom', getData('bom').filter(b=>b.paiId!==id&&b.compId!==id));
-  if(usadoPMP) saveData('pmp', getData('pmp').filter(x=>x.produtoId!==id));
-  if(usadoEst) saveData('estoque', getData('estoque').filter(x=>x.produtoId!==id));
-  audit('DELETE_PRODUTO', `${p.nome}`);
-  toast('ok','Removido','Produto excluído.');
-  produtos();
-}
-function exportProdutosCSV(){
-  const csv = toCSV(getData('produtos'), ['nome','categoria','estoque','custo']);
-  downloadFile('produtos.csv', csv, 'text/csv');
-  toast('ok','Exportado','CSV gerado.');
-}
-function importProdutosCSV(ev){
-  const f = ev.target.files[0]; if(!f) return;
-  const r = new FileReader();
-  r.onload = e => {
-    try {
-      const rows = parseCSV(e.target.result);
-      const list = getData('produtos');
-      let added=0, updated=0;
-      for(const row of rows){
-        if(!row.nome) continue;
-        const ex = list.find(p=>p.nome.toLowerCase()===row.nome.toLowerCase());
-        const data = {nome:row.nome, categoria:row.categoria||'Acabado', estoque:n(row.estoque), custo:n(row.custo)};
-        if(ex){ Object.assign(ex, data); updated++; }
-        else { list.push({id:uid(), ...data}); added++; }
-      }
-      saveData('produtos', list);
-      audit('IMPORT_CSV_PRODUTOS', `+${added} novos, ${updated} atualizados`);
-      toast('ok','Importado',`${added} novos, ${updated} atualizados.`);
-      produtos();
-    } catch(err){ toast('err','Erro','CSV inválido.'); }
-  };
-  r.readAsText(f);
-  ev.target.value='';
-}
-
-/* ── BOM ── */
-function bom(){
-  const all = getData('bom');
-  const prods = getData('produtos');
-  const pById = Object.fromEntries(prods.map(p=>[p.id,p.nome]));
-  const enriched = all.map(b=>({...b, paiNome:pById[b.paiId]||'?', compNome:pById[b.compId]||'?'}));
-  const filtered = applyFilter(enriched, 'bom', ['paiNome','compNome']);
-  const sorted = applySort(filtered, 'bom', {pai:b=>b.paiNome, comp:b=>b.compNome, qtd:b=>n(b.qtd)});
-  const paged = applyPage(sorted, 'bom');
-  const st = ps('bom');
-  document.getElementById('content').innerHTML=`
-  <div class="page-anim">
-    <div class="page-header">
-      <div><div class="page-title">BOM</div><div class="page-sub">Bill of Materials — estrutura de produto</div></div>
-      <div class="page-actions">${can('write')?`<button class="btn-add" onclick="editBOM()">+ Nova Relação</button>`:''}</div>
-    </div>
-    <div class="info-box">📋 Define quais componentes são necessários para produzir cada produto. Suporta múltiplos níveis (componentes que também têm BOM).</div>
-    <div class="card">
-      <div class="card-title">
-        Estrutura · ${filtered.length} de ${all.length} relação(ões)
-        <input class="search-box" placeholder="🔍 Buscar..." value="${escapeHtml(st.search)}" oninput="setSearch('bom',this.value)">
-      </div>
-      ${!paged.length?`<div class="empty"><div class="empty-icon">🔩</div>Nenhuma relação.</div>`:`
-      <div class="table-wrap"><table>
-        <thead><tr>${thSort('bom','Produto Pai','pai')}${thSort('bom','Componente','comp')}${thSort('bom','Qtd/un','qtd')}<th></th></tr></thead>
-        <tbody>${paged.map(b=>`<tr>
-          <td><strong>${escapeHtml(b.paiNome)}</strong></td>
-          <td>${escapeHtml(b.compNome)}</td>
-          <td><span class="badge badge-blue">${n(b.qtd)} un</span></td>
-          <td><div class="row-actions">
-            ${can('write')?`<button class="btn-edit" onclick="editBOM('${b.id}')">Editar</button>`:''}
-            ${can('delete')?`<button class="btn-del" onclick="delBOM('${b.id}')">Remover</button>`:''}
-          </div></td>
-        </tr>`).join('')}</tbody>
-      </table></div>
-      ${pagerHtml('bom', filtered.length)}`}
-    </div>
-  </div>`;
-}
-routes.bom = bom;
-
-function editBOM(id){
-  const b = id ? getById('bom', id) : {paiId:'',compId:'',qtd:1};
-  const prods = getData('produtos');
-  const opts = (sel)=>prods.map(p=>`<option value="${p.id}" ${sel===p.id?'selected':''}>${escapeHtml(p.nome)}</option>`).join('');
-  openModal(id?'Editar Relação':'Nova Relação',`
-    <div class="fld"><label>Produto Final</label><select id="f-pai"><option value="">— selecione —</option>${opts(b.paiId)}</select></div>
-    <div class="fld"><label>Componente</label><select id="f-comp"><option value="">— selecione —</option>${opts(b.compId)}</select></div>
-    <div class="fld"><label>Quantidade por unidade</label><input id="f-qtd" type="number" min="0.001" step="0.001" value="${n(b.qtd)||1}"></div>
-  `,`
-    <button class="btn-secondary" onclick="closeModal()">Cancelar</button>
-    <button class="btn-add" onclick="saveBOM('${id||''}')">Salvar</button>
-  `);
-}
-function saveBOM(id){
-  const paiId = document.getElementById('f-pai').value;
-  const compId = document.getElementById('f-comp').value;
-  const qtd = n(document.getElementById('f-qtd').value);
-  if(!paiId||!compId||qtd<=0){ toast('err','Erro','Preencha todos os campos.'); return; }
-  if(paiId===compId){ toast('err','Erro','Pai e componente não podem ser iguais.'); return; }
-  if(id){ updateById('bom', id, {paiId,compId,qtd}); audit('UPDATE_BOM',''); }
-  else { const l=getData('bom'); l.push({id:uid(),paiId,compId,qtd}); saveData('bom',l); audit('CREATE_BOM',''); }
-  closeModal(); toast('ok','Salvo','BOM atualizada.'); bom();
-}
-function delBOM(id){
-  if(!confirm('Remover relação?')) return;
-  deleteById('bom', id); audit('DELETE_BOM',''); bom();
-}
-
-/* ── ESTOQUE ── */
-function estoque(){
-  const all = getData('estoque');
-  const prods = getData('produtos');
-  const pById = Object.fromEntries(prods.map(p=>[p.id,p]));
-  const enriched = all.map(e=>{
-    const p = pById[e.produtoId];
-    return {...e, produtoNome:p?p.nome:'?', estAtual:p?n(p.estoque):0};
-  });
-  const filtered = applyFilter(enriched, 'estoque', ['produtoNome']);
-  const sorted = applySort(filtered, 'estoque', {prod:e=>e.produtoNome, ini:e=>n(e.inicial), seg:e=>n(e.seg), atual:e=>n(e.estAtual)});
-  const paged = applyPage(sorted, 'estoque');
-  const st = ps('estoque');
-  document.getElementById('content').innerHTML=`
-  <div class="page-anim">
-    <div class="page-header">
-      <div><div class="page-title">Estoque</div><div class="page-sub">Estoque atual, inicial e de segurança</div></div>
-      <div class="page-actions">${can('write')?`<button class="btn-add" onclick="editEstoque()">+ Novo Registro</button>`:''}</div>
-    </div>
-    <div class="card">
-      <div class="card-title">
-        Registros · ${filtered.length} de ${all.length}
-        <input class="search-box" placeholder="🔍 Buscar..." value="${escapeHtml(st.search)}" oninput="setSearch('estoque',this.value)">
-      </div>
-      ${!paged.length?`<div class="empty"><div class="empty-icon">📦</div>Nenhum registro.</div>`:`
-      <div class="table-wrap"><table>
-        <thead><tr>${thSort('estoque','Produto','prod')}${thSort('estoque','Atual','atual')}${thSort('estoque','Inicial','ini')}${thSort('estoque','Segurança','seg')}<th>Status</th><th></th></tr></thead>
-        <tbody>${paged.map(e=>{
-          const atual=n(e.estAtual), seg=n(e.seg);
-          const s = atual<seg?['badge-danger','Crítico']:atual<seg*1.5?['badge-warn','Atenção']:['badge-ok','OK'];
-          return `<tr>
-            <td><strong>${escapeHtml(e.produtoNome)}</strong></td>
-            <td style="font-family:var(--mono);font-weight:600;color:${atual<seg?'var(--danger)':'var(--text)'}">${fmt(atual)}</td>
-            <td style="font-family:var(--mono)">${fmt(e.inicial)}</td>
-            <td style="font-family:var(--mono)">${fmt(e.seg)}</td>
-            <td><span class="badge ${s[0]}">${s[1]}</span></td>
-            <td><div class="row-actions">
-              ${can('write')?`<button class="btn-edit" onclick="editEstoque('${e.id}')">Editar</button>`:''}
-              ${can('delete')?`<button class="btn-del" onclick="delEstoque('${e.id}')">Remover</button>`:''}
-            </div></td>
-          </tr>`;
-        }).join('')}</tbody>
-      </table></div>
-      ${pagerHtml('estoque', filtered.length)}`}
-    </div>
-  </div>`;
-}
-routes.estoque = estoque;
-
-function editEstoque(id){
-  const e = id ? getById('estoque', id) : {produtoId:'',inicial:0,seg:0};
-  const prods = getData('produtos');
-  const opts = prods.map(p=>`<option value="${p.id}" ${e.produtoId===p.id?'selected':''}>${escapeHtml(p.nome)}</option>`).join('');
-  openModal(id?'Editar Estoque':'Novo Registro',`
-    <div class="fld"><label>Produto</label><select id="f-prod"><option value="">— selecione —</option>${opts}</select></div>
-    <div class="grid2">
-      <div class="fld"><label>Estoque Inicial</label><input id="f-ini" type="number" min="0" value="${n(e.inicial)}"></div>
-      <div class="fld"><label>Estoque Segurança</label><input id="f-seg" type="number" min="0" value="${n(e.seg)}"></div>
-    </div>
-  `,`
-    <button class="btn-secondary" onclick="closeModal()">Cancelar</button>
-    <button class="btn-add" onclick="saveEstoque('${id||''}')">Salvar</button>
-  `);
-}
-function saveEstoque(id){
-  const produtoId = document.getElementById('f-prod').value;
-  if(!produtoId){ toast('err','Erro','Escolha um produto.'); return; }
-  const data = {produtoId, inicial:Math.max(0,n(document.getElementById('f-ini').value)), seg:Math.max(0,n(document.getElementById('f-seg').value))};
-  if(id){ updateById('estoque', id, data); audit('UPDATE_ESTOQUE',''); }
-  else { const l=getData('estoque'); l.push({id:uid(),...data}); saveData('estoque',l); audit('CREATE_ESTOQUE',''); }
-  closeModal(); toast('ok','Salvo','Estoque atualizado.'); estoque();
-}
-function delEstoque(id){
-  if(!confirm('Remover registro?')) return;
-  deleteById('estoque', id); audit('DELETE_ESTOQUE',''); estoque();
-}
-
-/* ── PMP ── */
-function pmp(){
-  const all = getData('pmp');
-  const prods = getData('produtos');
-  const ops = getData('operadores');
-  const maqs = getData('maquinas');
-  const pById = Object.fromEntries(prods.map(p=>[p.id,p.nome]));
-  const oById = Object.fromEntries(ops.map(o=>[o.id,o.nome]));
-  const mById = Object.fromEntries(maqs.map(m=>[m.id,m.nome]));
-  const enriched = all.map(p=>({...p, produtoNome:pById[p.produtoId]||'?', operadorNome:oById[p.operadorId]||'—', maquinaNome:mById[p.maquinaId]||'—'}));
-  const st = ps('pmp');
-  let filtered = applyFilter(enriched, 'pmp', ['produtoNome','status','operadorNome','maquinaNome']);
-  if(st.filter) filtered = filtered.filter(p=>p.status===st.filter);
-  const sorted = applySort(filtered, 'pmp', {prod:p=>p.produtoNome, ini:p=>p.dataInicio, fim:p=>p.dataFim, qtd:p=>n(p.qtd), st:p=>p.status});
-  const paged = applyPage(sorted, 'pmp');
-  const total = filtered.reduce((a,p)=>a+n(p.qtd),0);
-
-  document.getElementById('content').innerHTML=`
-  <div class="page-anim">
-    <div class="page-header">
-      <div><div class="page-title">PMP</div><div class="page-sub">Plano Mestre de Produção</div></div>
-      <div class="page-actions">${can('write')?`<button class="btn-add" onclick="editPMP()">+ Novo Pedido</button>`:''}</div>
-    </div>
-    <div class="info-box">📋 Define O QUÊ, QUANTO e QUANDO produzir. Use "Executar" para descontar matéria-prima e produzir.</div>
-    <div class="card">
-      <div class="card-title">
-        Pedidos · ${filtered.length} · ${fmt(total)} un
-        <div style="display:flex;gap:8px">
-          <input class="search-box" placeholder="🔍 Buscar..." value="${escapeHtml(st.search)}" oninput="setSearch('pmp',this.value)">
-          <select class="filter-sel" onchange="setFilter('pmp',this.value)">
-            <option value="">Todos status</option>
-            ${['Pendente','Em Produção','Concluído','Cancelado'].map(s=>`<option value="${s}" ${st.filter===s?'selected':''}>${s}</option>`).join('')}
-          </select>
-        </div>
-      </div>
-      ${!paged.length?`<div class="empty"><div class="empty-icon">📅</div>Nenhum pedido.</div>`:`
-      <div class="table-wrap"><table>
-        <thead><tr>${thSort('pmp','Produto','prod')}${thSort('pmp','Início','ini')}${thSort('pmp','Fim','fim')}${thSort('pmp','Qtd','qtd')}<th>Máquina</th><th>Operador</th>${thSort('pmp','Status','st')}<th></th></tr></thead>
-        <tbody>${paged.map(p=>{
-          const stMap = {'Pendente':'badge-warn','Em Produção':'badge-blue','Concluído':'badge-ok','Cancelado':'badge-gray'};
-          return `<tr>
-            <td><strong>${escapeHtml(p.produtoNome)}</strong></td>
-            <td style="font-family:var(--mono);font-size:12px">${fmtDate(p.dataInicio)}</td>
-            <td style="font-family:var(--mono);font-size:12px">${fmtDate(p.dataFim)}</td>
-            <td style="font-family:var(--mono);color:var(--accent);font-weight:600">${fmt(p.qtd)} un</td>
-            <td style="font-size:12px">${escapeHtml(p.maquinaNome)}</td>
-            <td style="font-size:12px">${escapeHtml(p.operadorNome)}</td>
-            <td><span class="badge ${stMap[p.status]||'badge-gray'}">${escapeHtml(p.status)}</span></td>
-            <td><div class="row-actions">
-              ${can('exec') && (p.status==='Pendente'||p.status==='Em Produção')?`<button class="btn-go" onclick="executarPMP('${p.id}')">▶ Executar</button>`:''}
-              ${can('write')?`<button class="btn-edit" onclick="editPMP('${p.id}')">Editar</button>`:''}
-              ${can('delete')?`<button class="btn-del" onclick="delPMP('${p.id}')">Remover</button>`:''}
-            </div></td>
-          </tr>`;
-        }).join('')}</tbody>
-      </table></div>
-      ${pagerHtml('pmp', filtered.length)}`}
-    </div>
-  </div>`;
-}
-routes.pmp = pmp;
-
-function editPMP(id){
-  const p = id ? getById('pmp', id) : {produtoId:'',dataInicio:todayISO(),dataFim:addDaysISO(todayISO(),3),qtd:0,status:'Pendente',maquinaId:'',operadorId:''};
-  const prods = getData('produtos').filter(x=>(x.categoria||'Acabado')!=='Matéria-Prima');
-  const ops = getData('operadores');
-  const maqs = getData('maquinas');
-  const popts = prods.map(x=>`<option value="${x.id}" ${p.produtoId===x.id?'selected':''}>${escapeHtml(x.nome)}</option>`).join('');
-  const oopts = ops.map(x=>`<option value="${x.id}" ${p.operadorId===x.id?'selected':''}>${escapeHtml(x.nome)}</option>`).join('');
-  const mopts = maqs.map(x=>`<option value="${x.id}" ${p.maquinaId===x.id?'selected':''}>${escapeHtml(x.nome)}</option>`).join('');
-  openModal(id?'Editar Pedido':'Novo Pedido',`
-    <div class="fld"><label>Produto</label><select id="f-prod"><option value="">— selecione —</option>${popts}</select></div>
-    <div class="grid2">
-      <div class="fld"><label>Data Início</label><input id="f-ini" type="date" value="${p.dataInicio}"></div>
-      <div class="fld"><label>Data Fim</label><input id="f-fim" type="date" value="${p.dataFim}"></div>
-    </div>
-    <div class="grid2">
-      <div class="fld"><label>Quantidade</label><input id="f-qtd" type="number" min="1" value="${n(p.qtd)||1}"></div>
-      <div class="fld"><label>Status</label><select id="f-st">${['Pendente','Em Produção','Concluído','Cancelado'].map(s=>`<option ${p.status===s?'selected':''}>${s}</option>`).join('')}</select></div>
-    </div>
-    <div class="grid2">
-      <div class="fld"><label>Máquina</label><select id="f-maq"><option value="">—</option>${mopts}</select></div>
-      <div class="fld"><label>Operador</label><select id="f-op"><option value="">—</option>${oopts}</select></div>
-    </div>
-  `,`
-    <button class="btn-secondary" onclick="closeModal()">Cancelar</button>
-    <button class="btn-add" onclick="savePMP('${id||''}')">Salvar</button>
-  `);
-}
-function savePMP(id){
-  const data = {
-    produtoId:document.getElementById('f-prod').value,
-    dataInicio:document.getElementById('f-ini').value,
-    dataFim:document.getElementById('f-fim').value,
-    qtd:n(document.getElementById('f-qtd').value),
-    status:document.getElementById('f-st').value,
-    maquinaId:document.getElementById('f-maq').value,
-    operadorId:document.getElementById('f-op').value
-  };
-  if(!data.produtoId||!data.dataInicio||!data.dataFim||data.qtd<=0){ toast('err','Erro','Preencha campos obrigatórios.'); return; }
-  if(new Date(data.dataFim) < new Date(data.dataInicio)){ toast('err','Erro','Data fim antes do início.'); return; }
-  if(id){ updateById('pmp', id, data); audit('UPDATE_PMP',''); }
-  else { const l=getData('pmp'); l.push({id:uid(),...data}); saveData('pmp',l); audit('CREATE_PMP',''); }
-  closeModal(); toast('ok','Salvo','Pedido registrado.'); pmp();
-}
-function delPMP(id){ if(!confirm('Remover pedido?')) return; deleteById('pmp', id); audit('DELETE_PMP',''); pmp(); }
-
-function executarPMP(id){
-  const ped = getById('pmp', id);
-  if(!ped) return;
-  const prod = getById('produtos', ped.produtoId);
-  if(!prod){ toast('err','Erro','Produto não existe.'); return; }
-  const acc = {};
-  explodeNeeds(ped.produtoId, n(ped.qtd), acc);
-  const prods = getData('produtos');
-  const pById = Object.fromEntries(prods.map(p=>[p.id,p]));
-  const linhas = Object.entries(acc).map(([pid, qtd])=>{
-    const p = pById[pid];
-    const disp = p?n(p.estoque):0;
-    return {pid, nome:p?p.nome:'?', need:qtd, disp, falta:Math.max(0, qtd-disp)};
-  });
-  const insuf = linhas.filter(l=>l.falta>0);
-  let body = `<div class="info-box">Vai produzir <strong>${fmt(ped.qtd)} un</strong> de <strong>${escapeHtml(prod.nome)}</strong>. Materiais necessários (multinível):</div>
-    <div class="table-wrap"><table>
-      <thead><tr><th>Componente</th><th>Necessário</th><th>Disponível</th><th>Falta</th></tr></thead>
-      <tbody>${linhas.map(l=>`<tr>
-        <td>${escapeHtml(l.nome)}</td>
-        <td style="font-family:var(--mono)">${fmt(l.need)}</td>
-        <td style="font-family:var(--mono)">${fmt(l.disp)}</td>
-        <td style="font-family:var(--mono);color:${l.falta>0?'var(--danger)':'var(--success)'};font-weight:600">${fmt(l.falta)}</td>
-      </tr>`).join('')}</tbody>
-    </table></div>`;
-  if(insuf.length) body += `<div class="alert-danger">⚠ Materiais insuficientes. Você pode gerar Ordem de Compra automaticamente para os faltantes.</div>`;
-  else body += `<div class="alert-ok">✅ Materiais disponíveis. Ao confirmar, o estoque será descontado e o produto somado.</div>`;
-  openModal('Executar Produção', body, `
-    <button class="btn-secondary" onclick="closeModal()">Cancelar</button>
-    ${insuf.length?`<button class="btn-warn" onclick="gerarOCFaltantes('${id}')">Gerar OC dos faltantes</button>`:''}
-    <button class="btn-add" ${insuf.length?'disabled':''} onclick="confirmarProducao('${id}')">Confirmar Produção</button>
-  `, {lg:true});
-}
-function confirmarProducao(id){
-  const ped = getById('pmp', id);
-  if(!ped) return;
-  const acc = {};
-  explodeNeeds(ped.produtoId, n(ped.qtd), acc);
-  const prods = getData('produtos');
-  for(const [pid, qtd] of Object.entries(acc)){
-    const p = prods.find(x=>x.id===pid);
-    if(!p || n(p.estoque) < qtd){ toast('err','Erro','Estoque insuficiente para '+(p?p.nome:pid)); return; }
-  }
-  for(const [pid, qtd] of Object.entries(acc)){
-    const p = prods.find(x=>x.id===pid);
-    p.estoque = n(p.estoque) - qtd;
-  }
-  const prodFinal = prods.find(p=>p.id===ped.produtoId);
-  if(prodFinal) prodFinal.estoque = n(prodFinal.estoque) + n(ped.qtd);
-  saveData('produtos', prods);
-  updateById('pmp', id, {status:'Concluído'});
-  audit('EXECUTAR_PMP', `${prodFinal?prodFinal.nome:''} ${ped.qtd} un`);
-  toast('ok','Produzido!',`${ped.qtd} un de ${prodFinal?prodFinal.nome:''} adicionadas ao estoque.`);
-  closeModal(); pmp();
-}
-function gerarOCFaltantes(id){
-  const ped = getById('pmp', id);
-  const acc = {};
-  explodeNeeds(ped.produtoId, n(ped.qtd), acc);
-  const prods = getData('produtos');
-  const ordens = getData('ordens');
-  const fornecedores = getData('fornecedores');
-  let count=0;
-  for(const [pid, qtd] of Object.entries(acc)){
-    const p = prods.find(x=>x.id===pid);
-    if(!p) continue;
-    const falta = qtd - n(p.estoque);
-    if(falta>0){
-      ordens.push({
-        id:uid(), componenteId:pid, qtd:Math.ceil(falta),
-        fornecedorId:fornecedores[0]?fornecedores[0].id:'',
-        dataPedido:todayISO(), dataEntrega:addDaysISO(todayISO(),7),
-        status:'Pendente', custo:Math.ceil(falta)*n(p.custo), origem:'PMP:'+id
-      });
-      count++;
-    }
-  }
-  saveData('ordens', ordens);
-  audit('GERAR_OC', `${count} ordens a partir do PMP`);
-  toast('ok','OC criadas',`${count} ordens de compra geradas.`);
-  closeModal(); load('ordens');
-}
-
-/* ── MRP ── */
-function mrp(){
-  const pmpD = getData('pmp').filter(p=>p.status==='Pendente'||p.status==='Em Produção');
-  const prods = getData('produtos');
-  const acc = {};
-  pmpD.forEach(p=>explodeNeeds(p.produtoId, n(p.qtd), acc));
-  const pById = Object.fromEntries(prods.map(p=>[p.id,p]));
-  const est = getData('estoque');
-  const eByP = Object.fromEntries(est.map(e=>[e.produtoId,e]));
-  const res = Object.entries(acc).map(([pid, bruta])=>{
-    const p = pById[pid];
-    const e = eByP[pid];
-    const disp = p?n(p.estoque):0;
-    const seg = e?n(e.seg):0;
-    return {pid, nome:p?p.nome:'?', categoria:p?p.categoria:'?', bruta, disp, seg, liq:Math.max(0, bruta-disp+seg)};
-  }).sort((a,b)=>b.liq-a.liq);
-
-  document.getElementById('content').innerHTML=`
-  <div class="page-anim">
-    <div class="page-header">
-      <div><div class="page-title">MRP</div><div class="page-sub">Material Requirements Planning · Multinível</div></div>
-      <div class="page-actions">
-        ${can('exec')&&res.some(r=>r.liq>0)?`<button class="btn-warn" onclick="gerarOCMRP()">📑 Gerar OC dos faltantes</button>`:''}
-        <button class="btn-secondary" onclick="window.print()">🖨 Imprimir</button>
-      </div>
-    </div>
-    <div class="info-box">🔢 Nec. Líquida = Necessidade Bruta (PMP × BOM recursivo) − Estoque Disponível + Estoque Segurança.</div>
-    ${!res.length?`<div class="card"><div class="empty"><div class="empty-icon">⚙️</div>Nenhum pedido ativo no PMP ou sem BOM.</div></div>`:`
-    <div class="card">
-      <div class="card-title">Necessidades · ${res.length} componente(s)</div>
-      <div class="table-wrap"><table>
-        <thead><tr><th>Componente</th><th>Categoria</th><th>Bruta</th><th>Disp.</th><th>Seg.</th><th>Líquida</th><th>Status</th><th></th></tr></thead>
-        <tbody>${res.map(r=>{
-          const s = r.liq===0?['badge-ok','OK']:r.liq<100?['badge-warn','Atenção']:['badge-danger','Comprar'];
-          return `<tr>
-            <td><strong>${escapeHtml(r.nome)}</strong></td>
-            <td><span class="badge badge-gray">${escapeHtml(r.categoria||'—')}</span></td>
-            <td style="font-family:var(--mono)">${fmt(r.bruta)}</td>
-            <td style="font-family:var(--mono);color:var(--accent2)">${fmt(r.disp)}</td>
-            <td style="font-family:var(--mono);color:var(--muted)">${fmt(r.seg)}</td>
-            <td style="font-family:var(--mono);font-weight:700;color:${r.liq>0?'var(--danger)':'var(--success)'}">${fmt(r.liq)}</td>
-            <td><span class="badge ${s[0]}">${s[1]}</span></td>
-            <td>${can('exec')&&r.liq>0?`<button class="btn-go" onclick="gerarOCItem('${r.pid}',${r.liq})">📑 OC</button>`:''}</td>
-          </tr>`;
-        }).join('')}</tbody>
-      </table></div>
-    </div>`}
-  </div>`;
-}
-routes.mrp = mrp;
-
-function gerarOCMRP(){
-  const pmpD = getData('pmp').filter(p=>p.status==='Pendente'||p.status==='Em Produção');
-  const prods = getData('produtos');
-  const pById = Object.fromEntries(prods.map(p=>[p.id,p]));
-  const est = getData('estoque');
-  const eByP = Object.fromEntries(est.map(e=>[e.produtoId,e]));
-  const acc = {};
-  pmpD.forEach(p=>explodeNeeds(p.produtoId, n(p.qtd), acc));
-  const ordens = getData('ordens');
-  const fornecedores = getData('fornecedores');
-  let count = 0;
-  for(const [pid, bruta] of Object.entries(acc)){
-    const p = pById[pid]; if(!p) continue;
-    const e = eByP[pid];
-    const liq = Math.max(0, bruta - n(p.estoque) + (e?n(e.seg):0));
-    if(liq>0){
-      ordens.push({
-        id:uid(), componenteId:pid, qtd:Math.ceil(liq),
-        fornecedorId:fornecedores[0]?fornecedores[0].id:'',
-        dataPedido:todayISO(), dataEntrega:addDaysISO(todayISO(),7),
-        status:'Pendente', custo:Math.ceil(liq)*n(p.custo), origem:'MRP'
-      });
-      count++;
-    }
-  }
-  saveData('ordens', ordens);
-  audit('GERAR_OC_MRP', `${count} ordens`);
-  toast('ok','OC criadas',`${count} ordens geradas.`);
-  load('ordens');
-}
-function gerarOCItem(pid, qtd){
-  const p = getById('produtos', pid); if(!p) return;
-  const ordens = getData('ordens');
-  const fornecedores = getData('fornecedores');
-  ordens.push({
-    id:uid(), componenteId:pid, qtd:Math.ceil(qtd),
-    fornecedorId:fornecedores[0]?fornecedores[0].id:'',
-    dataPedido:todayISO(), dataEntrega:addDaysISO(todayISO(),7),
-    status:'Pendente', custo:Math.ceil(qtd)*n(p.custo), origem:'MRP'
-  });
-  saveData('ordens', ordens);
-  audit('GERAR_OC_ITEM', `${p.nome} ${qtd}`);
-  toast('ok','OC criada','Pedido de compra registrado.');
-  load('ordens');
-}
-
-/* ── ORDENS ── */
-function ordens(){
-  const all = getData('ordens');
-  const prods = getData('produtos');
-  const fors = getData('fornecedores');
-  const pById = Object.fromEntries(prods.map(p=>[p.id,p.nome]));
-  const fById = Object.fromEntries(fors.map(f=>[f.id,f.nome]));
-  const enriched = all.map(o=>({...o, compNome:pById[o.componenteId]||'?', fornNome:fById[o.fornecedorId]||'—'}));
-  const st = ps('ordens');
-  let filtered = applyFilter(enriched, 'ordens', ['compNome','fornNome','status','origem']);
-  if(st.filter) filtered = filtered.filter(o=>o.status===st.filter);
-  const sorted = applySort(filtered, 'ordens', {comp:o=>o.compNome, qtd:o=>n(o.qtd), data:o=>o.dataPedido, ent:o=>o.dataEntrega, custo:o=>n(o.custo), st:o=>o.status});
-  const paged = applyPage(sorted, 'ordens');
-  const totalCusto = filtered.reduce((a,o)=>a+n(o.custo),0);
-
-  document.getElementById('content').innerHTML=`
-  <div class="page-anim">
-    <div class="page-header">
-      <div><div class="page-title">Ordens de Compra</div><div class="page-sub">Pedidos a fornecedores · Total: ${money(totalCusto)}</div></div>
-      <div class="page-actions">${can('write')?`<button class="btn-add" onclick="editOrdem()">+ Nova OC</button>`:''}</div>
-    </div>
-    <div class="card">
-      <div class="card-title">
-        Ordens · ${filtered.length} de ${all.length}
-        <div style="display:flex;gap:8px">
-          <input class="search-box" placeholder="🔍 Buscar..." value="${escapeHtml(st.search)}" oninput="setSearch('ordens',this.value)">
-          <select class="filter-sel" onchange="setFilter('ordens',this.value)">
-            <option value="">Todos</option>
-            ${['Pendente','Recebida','Cancelada'].map(s=>`<option ${st.filter===s?'selected':''}>${s}</option>`).join('')}
-          </select>
-        </div>
-      </div>
-      ${!paged.length?`<div class="empty"><div class="empty-icon">📑</div>Nenhuma ordem.</div>`:`
-      <div class="table-wrap"><table>
-        <thead><tr>${thSort('ordens','Componente','comp')}<th>Fornecedor</th>${thSort('ordens','Qtd','qtd')}${thSort('ordens','Pedido','data')}${thSort('ordens','Entrega','ent')}${thSort('ordens','Custo','custo')}${thSort('ordens','Status','st')}<th>Origem</th><th></th></tr></thead>
-        <tbody>${paged.map(o=>{
-          const stMap = {'Pendente':'badge-warn','Recebida':'badge-ok','Cancelada':'badge-gray'};
-          return `<tr>
-            <td><strong>${escapeHtml(o.compNome)}</strong></td>
-            <td>${escapeHtml(o.fornNome)}</td>
-            <td style="font-family:var(--mono)">${fmt(o.qtd)}</td>
-            <td style="font-family:var(--mono);font-size:12px">${fmtDate(o.dataPedido)}</td>
-            <td style="font-family:var(--mono);font-size:12px">${fmtDate(o.dataEntrega)}</td>
-            <td style="font-family:var(--mono);color:var(--accent);font-weight:600">${money(o.custo)}</td>
-            <td><span class="badge ${stMap[o.status]||'badge-gray'}">${escapeHtml(o.status)}</span></td>
-            <td><span class="badge badge-sky" style="font-size:10px">${escapeHtml(o.origem||'Manual')}</span></td>
-            <td><div class="row-actions">
-              ${can('exec')&&o.status==='Pendente'?`<button class="btn-go" onclick="receberOC('${o.id}')">✓ Receber</button>`:''}
-              ${can('write')?`<button class="btn-edit" onclick="editOrdem('${o.id}')">Editar</button>`:''}
-              ${can('delete')?`<button class="btn-del" onclick="delOrdem('${o.id}')">Remover</button>`:''}
-            </div></td>
-          </tr>`;
-        }).join('')}</tbody>
-      </table></div>
-      ${pagerHtml('ordens', filtered.length)}`}
-    </div>
-  </div>`;
-}
-routes.ordens = ordens;
-
-function editOrdem(id){
-  const o = id ? getById('ordens', id) : {componenteId:'',qtd:0,fornecedorId:'',dataPedido:todayISO(),dataEntrega:addDaysISO(todayISO(),7),status:'Pendente',custo:0,origem:'Manual'};
-  const prods = getData('produtos');
-  const fors = getData('fornecedores');
-  const popts = prods.map(x=>`<option value="${x.id}" ${o.componenteId===x.id?'selected':''}>${escapeHtml(x.nome)}</option>`).join('');
-  const fopts = fors.map(x=>`<option value="${x.id}" ${o.fornecedorId===x.id?'selected':''}>${escapeHtml(x.nome)}</option>`).join('');
-  openModal(id?'Editar OC':'Nova OC',`
-    <div class="fld"><label>Componente</label><select id="f-comp" onchange="document.getElementById('f-custo').value=(getById('produtos',this.value)||{custo:0}).custo*n(document.getElementById('f-qtd').value)"><option value="">— selecione —</option>${popts}</select></div>
-    <div class="grid2">
-      <div class="fld"><label>Quantidade</label><input id="f-qtd" type="number" min="1" value="${n(o.qtd)||1}"></div>
-      <div class="fld"><label>Custo Total (R$)</label><input id="f-custo" type="number" min="0" step="0.01" value="${n(o.custo)}"></div>
-    </div>
-    <div class="fld"><label>Fornecedor</label><select id="f-forn"><option value="">—</option>${fopts}</select></div>
-    <div class="grid2">
-      <div class="fld"><label>Data Pedido</label><input id="f-dp" type="date" value="${o.dataPedido}"></div>
-      <div class="fld"><label>Data Entrega</label><input id="f-de" type="date" value="${o.dataEntrega}"></div>
-    </div>
-    <div class="fld"><label>Status</label><select id="f-st">${['Pendente','Recebida','Cancelada'].map(s=>`<option ${o.status===s?'selected':''}>${s}</option>`).join('')}</select></div>
-  `,`
-    <button class="btn-secondary" onclick="closeModal()">Cancelar</button>
-    <button class="btn-add" onclick="saveOrdem('${id||''}')">Salvar</button>
-  `);
-}
-function saveOrdem(id){
-  const data = {
-    componenteId:document.getElementById('f-comp').value,
-    qtd:n(document.getElementById('f-qtd').value),
-    custo:n(document.getElementById('f-custo').value),
-    fornecedorId:document.getElementById('f-forn').value,
-    dataPedido:document.getElementById('f-dp').value,
-    dataEntrega:document.getElementById('f-de').value,
-    status:document.getElementById('f-st').value,
-    origem:'Manual'
-  };
-  if(!data.componenteId||data.qtd<=0){ toast('err','Erro','Componente e quantidade são obrigatórios.'); return; }
-  if(id){ updateById('ordens', id, data); audit('UPDATE_OC',''); }
-  else { const l=getData('ordens'); l.push({id:uid(),...data}); saveData('ordens',l); audit('CREATE_OC',''); }
-  closeModal(); toast('ok','Salvo','OC registrada.'); ordens();
-}
-function delOrdem(id){ if(!confirm('Remover OC?')) return; deleteById('ordens', id); audit('DELETE_OC',''); ordens(); }
-function receberOC(id){
-  const o = getById('ordens', id); if(!o) return;
-  if(!confirm(`Confirmar recebimento de ${o.qtd} un? Estoque será atualizado.`)) return;
-  const prods = getData('produtos');
-  const p = prods.find(x=>x.id===o.componenteId);
-  if(p){ p.estoque = n(p.estoque) + n(o.qtd); saveData('produtos', prods); }
-  updateById('ordens', id, {status:'Recebida'});
-  audit('RECEBER_OC', `${p?p.nome:'?'} +${o.qtd}`);
-  toast('ok','Recebido!',`+${o.qtd} no estoque de ${p?p.nome:'?'}.`);
-  ordens();
-}
-
-/* ── CRP COM GANTT ── */
-function crp(){
-  const pmpD = getData('pmp').filter(p=>p.status==='Pendente'||p.status==='Em Produção');
-  const maqD = getData('maquinas');
-  const total = pmpD.reduce((a,p)=>a+n(p.qtd),0);
-  const capMaq = maqD.reduce((a,m)=>a+n(m.prodHora)*n(m.tempo),0);
-  const cap = capMaq||2000;
-  const uso = cap>0 ? total/cap : 0;
-  const porProd = {};
-  const prods = getData('produtos');
-  const pById = Object.fromEntries(prods.map(p=>[p.id,p.nome]));
-  pmpD.forEach(p=>{ const k=pById[p.produtoId]||'?'; porProd[k]=(porProd[k]||0)+n(p.qtd); });
-
-  // Gantt: por máquina, entre min(dataInicio) e max(dataFim)
-  let minD=null, maxD=null;
-  pmpD.forEach(p=>{
-    if(!minD||p.dataInicio<minD) minD=p.dataInicio;
-    if(!maxD||p.dataFim>maxD) maxD=p.dataFim;
-  });
-  const totalDays = (minD&&maxD) ? daysBetween(minD,maxD) : 0;
-  const ganttCols = '160px 1fr';
-
-  document.getElementById('content').innerHTML=`
-  <div class="page-anim">
-    <div class="page-header">
-      <div><div class="page-title">CRP</div><div class="page-sub">Capacity Requirements Planning</div></div>
-      <div class="page-actions"><button class="btn-secondary" onclick="window.print()">🖨 Imprimir</button></div>
-    </div>
-    <div class="info-box">📊 Capacidade: ${fmt(cap)} un/período · ${maqD.length} máquina(s) cadastrada(s).</div>
-    <div class="grid2">
-      <div class="card">
-        <div class="card-title">Carga vs Capacidade</div>
-        <div style="margin-bottom:20px">
-          <div style="font-size:12px;color:var(--muted);font-weight:500;margin-bottom:6px">Carga do PMP Ativo</div>
-          <div style="font-size:38px;font-weight:700;font-family:var(--mono);color:${uso>1?'var(--danger)':uso>0.8?'var(--warn)':'var(--accent)'}">${fmt(total)}<span style="font-size:16px;color:var(--muted);font-weight:400"> un</span></div>
-        </div>
-        <div class="crp-bar-wrap">
-          <div class="crp-bar-label"><span>Utilização</span><span style="font-weight:700;color:${uso>1?'var(--danger)':uso>0.8?'var(--warn)':'var(--accent)'}">${(uso*100).toFixed(1)}%</span></div>
-          <div class="crp-bar-bg"><div class="crp-bar-fill" style="width:${Math.min(uso,1)*100}%;background:${uso>1?'var(--danger)':uso>0.8?'var(--warn)':'var(--accent)'}"></div></div>
-        </div>
-        <div class="grid2" style="margin-top:18px;gap:12px">
-          <div style="background:var(--surface2);border:1px solid var(--border);border-radius:8px;padding:14px"><div class="stat-label">Capacidade</div><div style="font-family:var(--mono);font-size:20px;font-weight:700;color:var(--accent2)">${fmt(cap)}</div></div>
-          <div style="background:var(--surface2);border:1px solid var(--border);border-radius:8px;padding:14px"><div class="stat-label">Saldo</div><div style="font-family:var(--mono);font-size:20px;font-weight:700;color:${(cap-total)>=0?'var(--success)':'var(--danger)'}">${fmt(cap-total)}</div></div>
-        </div>
-        ${uso>1?`<div class="alert-danger">⚠️ Capacidade excedida em ${((uso-1)*100).toFixed(1)}%.</div>`:total>0?`<div class="alert-ok">✅ Produção dentro da capacidade.</div>`:''}
-      </div>
-      <div class="card">
-        <div class="card-title">Carga por Produto</div>
-        ${!Object.keys(porProd).length?`<div class="empty"><div class="empty-icon">📊</div>Nenhum pedido ativo.</div>`:
-          Object.entries(porProd).map(([prod,qtd])=>`
-            <div class="crp-bar-wrap">
-              <div class="crp-bar-label"><span style="font-size:13px">${escapeHtml(prod)}</span><span style="font-weight:600;color:var(--accent)">${fmt(qtd)} un</span></div>
-              <div class="crp-bar-bg"><div class="crp-bar-fill" style="width:${Math.min(qtd/cap,1)*100}%;background:#0891b2"></div></div>
-            </div>`).join('')}
-      </div>
-    </div>
-    <div class="card">
-      <div class="card-title">Gantt — Ocupação por Máquina ${minD?`(${fmtDate(minD)} → ${fmtDate(maxD)})`:''}</div>
-      ${!totalDays?`<div class="empty"><div class="empty-icon">📅</div>Sem pedidos ativos.</div>`:`
-      <div class="gantt">
-        <div class="gantt-head" style="grid-template-columns:${ganttCols}"><div>Máquina</div><div>${totalDays} dia(s)</div></div>
-        ${maqD.map((m,mi)=>{
-          const pedidos = pmpD.filter(p=>p.maquinaId===m.id);
-          if(!pedidos.length) return `<div class="gantt-row" style="grid-template-columns:${ganttCols}"><div class="gantt-name">${escapeHtml(m.nome)}</div><div class="gantt-track"><span style="color:var(--muted);font-size:10px;align-self:center;padding-left:6px">— sem alocação —</span></div></div>`;
-          const bars = pedidos.map((p,pi)=>{
-            const offset = (daysBetween(minD,p.dataInicio)-1)/totalDays*100;
-            const wDays = daysBetween(p.dataInicio,p.dataFim);
-            const w = wDays/totalDays*100;
-            const cls = ['','b2','b3','b4'][pi%4];
-            return `<div class="gantt-bar ${cls}" style="left:${offset}%;width:${w}%" title="${escapeHtml(pById[p.produtoId]||'')} (${p.qtd} un)">${escapeHtml((pById[p.produtoId]||'').split(' ')[0])} ${p.qtd}</div>`;
-          }).join('');
-          return `<div class="gantt-row" style="grid-template-columns:${ganttCols}"><div class="gantt-name">${escapeHtml(m.nome)}</div><div class="gantt-track">${bars}</div></div>`;
-        }).join('')}
-      </div>`}
-    </div>
-  </div>`;
-}
-routes.crp = crp;
-
-/* ── OPERADORES ── */
-function operadores(){
-  const all = getData('operadores');
-  const st = ps('operadores');
-  const filtered = applyFilter(all, 'operadores', ['nome','cargo']);
-  const sorted = applySort(filtered, 'operadores', {nome:o=>o.nome, cargo:o=>o.cargo, custo:o=>n(o.custoHora)});
-  const paged = applyPage(sorted, 'operadores');
-  document.getElementById('content').innerHTML=`
-  <div class="page-anim">
-    <div class="page-header">
-      <div><div class="page-title">Operadores</div><div class="page-sub">Equipe de produção</div></div>
-      <div class="page-actions">${can('write')?`<button class="btn-add" onclick="editOp()">+ Novo Operador</button>`:''}</div>
-    </div>
-    <div class="card">
-      <div class="card-title">Equipe · ${filtered.length}<input class="search-box" placeholder="🔍 Buscar..." value="${escapeHtml(st.search)}" oninput="setSearch('operadores',this.value)"></div>
-      ${!paged.length?`<div class="empty"><div class="empty-icon">👷</div>Nenhum operador.</div>`:`
-      <div class="table-wrap"><table>
-        <thead><tr>${thSort('operadores','Nome','nome')}${thSort('operadores','Cargo','cargo')}${thSort('operadores','R$/h','custo')}<th></th></tr></thead>
-        <tbody>${paged.map(o=>`<tr>
-          <td><strong>${escapeHtml(o.nome)}</strong></td>
-          <td><span class="badge badge-blue">${escapeHtml(o.cargo)}</span></td>
-          <td style="font-family:var(--mono)">${money(o.custoHora)}</td>
-          <td><div class="row-actions">
-            ${can('write')?`<button class="btn-edit" onclick="editOp('${o.id}')">Editar</button>`:''}
-            ${can('delete')?`<button class="btn-del" onclick="delOp('${o.id}')">Remover</button>`:''}
-          </div></td>
-        </tr>`).join('')}</tbody>
-      </table></div>
-      ${pagerHtml('operadores', filtered.length)}`}
-    </div>
-  </div>`;
-}
-routes.operadores = operadores;
-
-function editOp(id){
-  const o = id ? getById('operadores', id) : {nome:'',cargo:'',custoHora:0};
-  openModal(id?'Editar Operador':'Novo Operador',`
-    <div class="fld"><label>Nome</label><input id="f-nome" value="${escapeHtml(o.nome)}"></div>
-    <div class="grid2">
-      <div class="fld"><label>Cargo</label><input id="f-cargo" value="${escapeHtml(o.cargo)}"></div>
-      <div class="fld"><label>Custo R$/h</label><input id="f-ch" type="number" min="0" step="0.01" value="${n(o.custoHora)}"></div>
-    </div>
-  `,`
-    <button class="btn-secondary" onclick="closeModal()">Cancelar</button>
-    <button class="btn-add" onclick="saveOp('${id||''}')">Salvar</button>
-  `);
-}
-function saveOp(id){
-  const nome = document.getElementById('f-nome').value.trim();
-  if(!nome){ toast('err','Erro','Nome obrigatório.'); return; }
-  const data = {nome, cargo:document.getElementById('f-cargo').value.trim()||'—', custoHora:n(document.getElementById('f-ch').value)};
-  if(id){ updateById('operadores', id, data); audit('UPDATE_OP',nome); }
-  else { const l=getData('operadores'); l.push({id:uid(),...data}); saveData('operadores',l); audit('CREATE_OP',nome); }
-  closeModal(); toast('ok','Salvo',''); operadores();
-}
-function delOp(id){ if(!confirm('Remover operador?')) return; deleteById('operadores', id); audit('DELETE_OP',''); operadores(); }
-
-/* ── MÁQUINAS ── */
-function maquinas(){
-  const all = getData('maquinas');
-  const st = ps('maquinas');
-  const filtered = applyFilter(all, 'maquinas', ['nome']);
-  const sorted = applySort(filtered, 'maquinas', {nome:m=>m.nome, ph:m=>n(m.prodHora), custo:m=>n(m.custo), tempo:m=>n(m.tempo), cap:m=>n(m.prodHora)*n(m.tempo)});
-  const paged = applyPage(sorted, 'maquinas');
-  const capTotal = all.reduce((a,m)=>a+n(m.prodHora)*n(m.tempo),0);
-  document.getElementById('content').innerHTML=`
-  <div class="page-anim">
-    <div class="page-header">
-      <div><div class="page-title">Máquinas</div><div class="page-sub">Capacidade total: <strong>${fmt(capTotal)} un/período</strong></div></div>
-      <div class="page-actions">${can('write')?`<button class="btn-add" onclick="editMaq()">+ Nova Máquina</button>`:''}</div>
-    </div>
-    <div class="card">
-      <div class="card-title">Parque · ${filtered.length}<input class="search-box" placeholder="🔍 Buscar..." value="${escapeHtml(st.search)}" oninput="setSearch('maquinas',this.value)"></div>
-      ${!paged.length?`<div class="empty"><div class="empty-icon">🏭</div>Nenhuma máquina.</div>`:`
-      <div class="table-wrap"><table>
-        <thead><tr>${thSort('maquinas','Máquina','nome')}${thSort('maquinas','Prod/h','ph')}${thSort('maquinas','R$/h','custo')}${thSort('maquinas','Horas','tempo')}${thSort('maquinas','Cap. Total','cap')}<th></th></tr></thead>
-        <tbody>${paged.map(m=>`<tr>
-          <td><strong>${escapeHtml(m.nome)}</strong></td>
-          <td style="font-family:var(--mono)">${fmt(m.prodHora)}</td>
-          <td style="font-family:var(--mono)">${money(m.custo)}</td>
-          <td style="font-family:var(--mono)">${n(m.tempo)}h</td>
-          <td style="font-family:var(--mono);color:var(--accent);font-weight:600">${fmt(n(m.prodHora)*n(m.tempo))} un</td>
-          <td><div class="row-actions">
-            ${can('write')?`<button class="btn-edit" onclick="editMaq('${m.id}')">Editar</button>`:''}
-            ${can('delete')?`<button class="btn-del" onclick="delMaq('${m.id}')">Remover</button>`:''}
-          </div></td>
-        </tr>`).join('')}</tbody>
-      </table></div>
-      ${pagerHtml('maquinas', filtered.length)}`}
-    </div>
-  </div>`;
-}
-routes.maquinas = maquinas;
-
-function editMaq(id){
-  const m = id ? getById('maquinas', id) : {nome:'',prodHora:0,custo:0,tempo:0};
-  openModal(id?'Editar Máquina':'Nova Máquina',`
-    <div class="fld"><label>Nome</label><input id="f-nome" value="${escapeHtml(m.nome)}"></div>
-    <div class="grid3">
-      <div class="fld"><label>Produção/h</label><input id="f-ph" type="number" min="0" value="${n(m.prodHora)}"></div>
-      <div class="fld"><label>Custo R$/h</label><input id="f-custo" type="number" min="0" step="0.01" value="${n(m.custo)}"></div>
-      <div class="fld"><label>Horas/período</label><input id="f-t" type="number" min="0" value="${n(m.tempo)}"></div>
-    </div>
-  `,`
-    <button class="btn-secondary" onclick="closeModal()">Cancelar</button>
-    <button class="btn-add" onclick="saveMaq('${id||''}')">Salvar</button>
-  `);
-}
-function saveMaq(id){
-  const nome = document.getElementById('f-nome').value.trim();
-  if(!nome){ toast('err','Erro','Nome obrigatório.'); return; }
-  const data = {nome, prodHora:n(document.getElementById('f-ph').value), custo:n(document.getElementById('f-custo').value), tempo:n(document.getElementById('f-t').value)};
-  if(id){ updateById('maquinas', id, data); audit('UPDATE_MAQ',nome); }
-  else { const l=getData('maquinas'); l.push({id:uid(),...data}); saveData('maquinas',l); audit('CREATE_MAQ',nome); }
-  closeModal(); toast('ok','Salvo',''); maquinas();
-}
-function delMaq(id){ if(!confirm('Remover máquina?')) return; deleteById('maquinas', id); audit('DELETE_MAQ',''); maquinas(); }
-
-/* ── FORNECEDORES ── */
-function fornecedores(){
-  const all = getData('fornecedores');
-  const st = ps('fornecedores');
-  const filtered = applyFilter(all, 'fornecedores', ['nome','contato']);
-  const sorted = applySort(filtered, 'fornecedores', {nome:f=>f.nome});
-  const paged = applyPage(sorted, 'fornecedores');
-  document.getElementById('content').innerHTML=`
-  <div class="page-anim">
-    <div class="page-header">
-      <div><div class="page-title">Fornecedores</div><div class="page-sub">Cadastro de parceiros comerciais</div></div>
-      <div class="page-actions">${can('write')?`<button class="btn-add" onclick="editForn()">+ Novo Fornecedor</button>`:''}</div>
-    </div>
-    <div class="card">
-      <div class="card-title">Fornecedores · ${filtered.length}<input class="search-box" placeholder="🔍 Buscar..." value="${escapeHtml(st.search)}" oninput="setSearch('fornecedores',this.value)"></div>
-      ${!paged.length?`<div class="empty"><div class="empty-icon">🏢</div>Nenhum fornecedor.</div>`:`
-      <div class="table-wrap"><table>
-        <thead><tr>${thSort('fornecedores','Nome','nome')}<th>Contato</th><th></th></tr></thead>
-        <tbody>${paged.map(f=>`<tr>
-          <td><strong>${escapeHtml(f.nome)}</strong></td>
-          <td style="font-family:var(--mono)">${escapeHtml(f.contato||'—')}</td>
-          <td><div class="row-actions">
-            ${can('write')?`<button class="btn-edit" onclick="editForn('${f.id}')">Editar</button>`:''}
-            ${can('delete')?`<button class="btn-del" onclick="delForn('${f.id}')">Remover</button>`:''}
-          </div></td>
-        </tr>`).join('')}</tbody>
-      </table></div>
-      ${pagerHtml('fornecedores', filtered.length)}`}
-    </div>
-  </div>`;
-}
-routes.fornecedores = fornecedores;
-function editForn(id){
-  const f = id ? getById('fornecedores', id) : {nome:'',contato:''};
-  openModal(id?'Editar Fornecedor':'Novo Fornecedor',`
-    <div class="fld"><label>Nome</label><input id="f-nome" value="${escapeHtml(f.nome)}"></div>
-    <div class="fld"><label>Contato</label><input id="f-contato" value="${escapeHtml(f.contato)}"></div>
-  `,`
-    <button class="btn-secondary" onclick="closeModal()">Cancelar</button>
-    <button class="btn-add" onclick="saveForn('${id||''}')">Salvar</button>
-  `);
-}
-function saveForn(id){
-  const nome = document.getElementById('f-nome').value.trim();
-  if(!nome){ toast('err','Erro','Nome obrigatório.'); return; }
-  const data = {nome, contato:document.getElementById('f-contato').value.trim()};
-  if(id){ updateById('fornecedores', id, data); audit('UPDATE_FORN',nome); }
-  else { const l=getData('fornecedores'); l.push({id:uid(),...data}); saveData('fornecedores',l); audit('CREATE_FORN',nome); }
-  closeModal(); toast('ok','Salvo',''); fornecedores();
-}
-function delForn(id){ if(!confirm('Remover fornecedor?')) return; deleteById('fornecedores', id); audit('DELETE_FORN',''); fornecedores(); }
-
-/* ── USUÁRIOS ── */
-function usuarios(){
-  if(CURRENT.perfil!=='Administrador'){ document.getElementById('content').innerHTML=`<div class="card"><div class="empty"><div class="empty-icon">🔒</div>Acesso restrito ao Administrador.</div></div>`; return; }
-  const all = getData('usuarios');
-  document.getElementById('content').innerHTML=`
-  <div class="page-anim">
-    <div class="page-header">
-      <div><div class="page-title">Usuários</div><div class="page-sub">Controle de acesso</div></div>
-      <div class="page-actions"><button class="btn-add" onclick="editUser()">+ Novo Usuário</button></div>
-    </div>
-    <div class="card">
-      <div class="card-title">Usuários · ${all.length}</div>
-      <div class="table-wrap"><table>
-        <thead><tr><th>Nome</th><th>Perfil</th><th></th></tr></thead>
-        <tbody>${all.map(u=>`<tr>
-          <td><strong>${escapeHtml(u.nome)}</strong></td>
-          <td><span class="badge ${u.perfil==='Administrador'?'badge-purple':u.perfil==='Supervisor'?'badge-blue':'badge-gray'}">${escapeHtml(u.perfil)}</span></td>
-          <td><div class="row-actions">
-            <button class="btn-edit" onclick="editUser('${u.id}')">Editar</button>
-            ${u.id!==CURRENT.id?`<button class="btn-del" onclick="delUser('${u.id}')">Remover</button>`:''}
-          </div></td>
-        </tr>`).join('')}</tbody>
-      </table></div>
-    </div>
-  </div>`;
-}
-routes.usuarios = usuarios;
-function editUser(id){
-  const u = id ? getById('usuarios', id) : {nome:'',perfil:'Operador'};
-  openModal(id?'Editar Usuário':'Novo Usuário',`
-    <div class="fld"><label>Nome de usuário</label><input id="f-nome" value="${escapeHtml(u.nome)}"></div>
-    <div class="fld"><label>Perfil</label><select id="f-perfil">
-      <option ${u.perfil==='Administrador'?'selected':''}>Administrador</option>
-      <option ${u.perfil==='Supervisor'?'selected':''}>Supervisor</option>
-      <option ${u.perfil==='Operador'?'selected':''}>Operador</option>
-    </select></div>
-    <div class="fld"><label>${id?'Nova senha (deixe em branco para manter)':'Senha'}</label><input id="f-senha" type="password" placeholder="${id?'••••':'mínimo 4 caracteres'}"></div>
-  `,`
-    <button class="btn-secondary" onclick="closeModal()">Cancelar</button>
-    <button class="btn-add" onclick="saveUser('${id||''}')">Salvar</button>
-  `);
-}
-async function saveUser(id){
-  const nome = document.getElementById('f-nome').value.trim();
-  const perfil = document.getElementById('f-perfil').value;
-  const senha = document.getElementById('f-senha').value;
-  if(!nome){ toast('err','Erro','Nome obrigatório.'); return; }
-  const list = getData('usuarios');
-  const dup = list.find(u=>u.nome.toLowerCase()===nome.toLowerCase() && u.id!==id);
-  if(dup){ toast('err','Erro','Usuário já existe.'); return; }
-  if(id){
-    const patch = {nome, perfil};
-    if(senha){ if(senha.length<4){ toast('err','Erro','Senha mínima 4 caracteres.'); return; } patch.senhaHash = await sha256(senha); }
-    updateById('usuarios', id, patch);
-    audit('UPDATE_USER', nome);
-  } else {
-    if(!senha || senha.length<4){ toast('err','Erro','Senha mínima 4 caracteres.'); return; }
-    const senhaHash = await sha256(senha);
-    list.push({id:uid(), nome, perfil, senhaHash});
-    saveData('usuarios', list);
-    audit('CREATE_USER', nome);
-  }
-  closeModal(); toast('ok','Salvo',''); usuarios();
-}
-function delUser(id){
-  if(id===CURRENT.id){ toast('err','Erro','Não pode remover a si mesmo.'); return; }
-  if(!confirm('Remover usuário?')) return;
-  deleteById('usuarios', id); audit('DELETE_USER',''); usuarios();
-}
-
-/* ── AUDITORIA ── */
-function auditoria(){
-  const all = getData('audit');
-  const st = ps('auditoria');
-  const filtered = applyFilter(all, 'auditoria', ['acao','detalhes','usuario']);
-  const paged = applyPage(filtered, 'auditoria');
-  document.getElementById('content').innerHTML=`
-  <div class="page-anim">
-    <div class="page-header">
-      <div><div class="page-title">Auditoria</div><div class="page-sub">Histórico de ações no sistema (últimas 500)</div></div>
-      <div class="page-actions">
-        <button class="btn-secondary" onclick="exportAudit()">⬇ Exportar CSV</button>
-        ${CURRENT.perfil==='Administrador'?`<button class="btn-warn" onclick="if(confirm('Limpar log?')){ saveData('audit',[]); audit('CLEAR_AUDIT',''); auditoria(); }">Limpar log</button>`:''}
-      </div>
-    </div>
-    <div class="card">
-      <div class="card-title">Eventos · ${filtered.length}<input class="search-box" placeholder="🔍 Buscar..." value="${escapeHtml(st.search)}" oninput="setSearch('auditoria',this.value)"></div>
-      ${!paged.length?`<div class="empty"><div class="empty-icon">📜</div>Sem registros.</div>`:`
-      <div class="table-wrap"><table>
-        <thead><tr><th>Data/Hora</th><th>Usuário</th><th>Ação</th><th>Detalhes</th></tr></thead>
-        <tbody>${paged.map(a=>`<tr>
-          <td style="font-family:var(--mono);font-size:11px">${new Date(a.data).toLocaleString('pt-BR')}</td>
-          <td><span class="badge badge-blue">${escapeHtml(a.usuario)}</span></td>
-          <td style="font-family:var(--mono);font-size:12px;font-weight:600">${escapeHtml(a.acao)}</td>
-          <td style="color:var(--muted);font-size:12px">${escapeHtml(a.detalhes)}</td>
-        </tr>`).join('')}</tbody>
-      </table></div>
-      ${pagerHtml('auditoria', filtered.length)}`}
-    </div>
-  </div>`;
-}
-routes.auditoria = auditoria;
-function exportAudit(){ downloadFile('auditoria.csv', toCSV(getData('audit'), ['data','usuario','acao','detalhes']), 'text/csv'); toast('ok','Exportado',''); }
-
-/* ── CONFIG ── */
-function config(){
-  const keys = ['produtos','bom','estoque','pmp','operadores','maquinas','ordens','fornecedores','usuarios','audit'];
-  document.getElementById('content').innerHTML=`
-  <div class="page-anim">
-    <div class="page-header">
-      <div><div class="page-title">Configurações</div><div class="page-sub">Administração do sistema</div></div>
-      <div class="page-actions"><button class="btn-secondary" onclick="window.print()">🖨 Relatório PDF</button></div>
-    </div>
-    <div class="card">
-      <div class="card-title">Resumo de Dados</div>
-      <div style="display:grid;grid-template-columns:repeat(5,1fr);gap:12px;margin-bottom:22px">
-        ${keys.map(k=>`
-          <div style="background:var(--surface2);border:1px solid var(--border);border-radius:8px;padding:14px;text-align:center">
-            <div class="stat-label">${k}</div>
-            <div style="font-family:var(--mono);font-size:22px;font-weight:700;color:var(--accent)">${getData(k).length}</div>
-          </div>`).join('')}
-      </div>
-      <div style="display:flex;gap:12px;flex-wrap:wrap">
-        <button class="btn-secondary" onclick="exportAll()">⬇ Backup completo (JSON)</button>
-        ${can('write')?`<button class="btn-secondary" onclick="document.getElementById('imp-all').click()">⬆ Restaurar JSON</button>
-        <input type="file" id="imp-all" accept=".json" style="display:none" onchange="importAll(event)">`:''}
-        ${CURRENT.perfil==='Administrador'?`<button class="btn-del" style="padding:10px 20px;font-size:13px" onclick="resetSystem()">⚠ Resetar Sistema</button>`:''}
-      </div>
-    </div>
-    <div class="card">
-      <div class="card-title">Sobre o Sistema</div>
-      <div style="font-size:13px;color:var(--muted);line-height:2;font-family:var(--mono)">
-        <div>Plataforma&nbsp;&nbsp;Vixmilks ERP PCP v5.0</div>
-        <div>Storage&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;localStorage (navegador)</div>
-        <div>Auth&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;SHA-256 + perfis</div>
-        <div>Módulos&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Dashboard · PMP · MRP recursivo · CRP+Gantt · OC automáticas · Estoque · Auditoria</div>
-      </div>
-    </div>
-  </div>`;
-}
-routes.config = config;
-function exportAll(){
-  const data = {};
-  ['produtos','bom','estoque','pmp','operadores','maquinas','ordens','fornecedores','usuarios','audit'].forEach(k=>data[k]=getData(k));
-  downloadFile('vixmilks_backup_'+todayISO()+'.json', JSON.stringify(data,null,2), 'application/json');
-  audit('EXPORT_BACKUP','');
-  toast('ok','Exportado','');
-}
-function importAll(ev){
-  const f = ev.target.files[0]; if(!f) return;
-  const r = new FileReader();
-  r.onload = e => {
-    try {
-      const data = JSON.parse(e.target.result);
-      if(!confirm('Substituir TODOS os dados pelos do arquivo?')) return;
-      ['produtos','bom','estoque','pmp','operadores','maquinas','ordens','fornecedores','usuarios','audit'].forEach(k=>{
-        if(Array.isArray(data[k])) saveData(k, data[k]);
-      });
-      audit('IMPORT_BACKUP','');
-      toast('ok','Importado','Dados restaurados.');
-      load('config');
-    } catch(err){ toast('err','Erro','Arquivo inválido.'); }
-  };
-  r.readAsText(f);
-  ev.target.value='';
-}
-async function resetSystem(){
-  if(!confirm('Apagar TODOS os dados e refazer cadastros padrão?')) return;
-  ['produtos','bom','estoque','pmp','operadores','maquinas','ordens','fornecedores','usuarios','audit'].forEach(k=>localStorage.removeItem('vmk_'+k));
-  localStorage.removeItem('vmk_seeded');
-  await seed();
-  toast('ok','Reset','Sistema reinicializado.');
-  setTimeout(()=>location.reload(), 600);
 }
 
 /* ── INIT ── */
-(async function(){
+window.onload = async () => {
+  document.getElementById('topbar-date').textContent = new Date().toLocaleDateString('pt-BR');
   await seed();
-  const sid = sessionStorage.getItem('vmk_session');
-  if(sid){
-    const u = getById('usuarios', sid);
-    if(u){
-      CURRENT = u;
-      document.getElementById('login').style.display='none';
-      document.getElementById('app').style.display='block';
+  const session = sessionStorage.getItem('vmk_session');
+  if(session) {
+    CURRENT = getById('usuarios', session);
+    if(CURRENT) {
+      document.getElementById('login').style.display = 'none';
+      document.getElementById('app').style.display = 'block';
       renderShell();
       load('dashboard');
-      refreshBell();
     }
   }
-})();
+};
 </script>
 </body>
 </html>
